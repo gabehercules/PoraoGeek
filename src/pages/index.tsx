@@ -1,7 +1,5 @@
 import Head from 'next/head'
-// import Image from 'next/image'
-import Logo from "../components/Logo"
-
+import Logo from '../components/Logo'
 
 export default function Home() {
   return (
@@ -11,13 +9,14 @@ export default function Home() {
         <meta name="description" content="Porão Geek - Onde mundos se conectam" />
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <div className="w-screen h-screen flex justify-center items-center">
-      <div>
+      <div className="bg-[url('/hero-bg.jpg')] w-screen h-screen flex justify-center items-center">
+      <div className="max-w-[800px]">
         <div className="w-[200px] m-auto mb-6">
           <Logo />
         </div>
-        <p className="text-center text-white text-lg mb-2">Uma experiência única está por vir</p>
-        <h3 className="text-3xl font-bold text-white text-center">2023</h3>
+        <h1 className="text-center text-white text-7xl font-extrabold mb-10 leading-snug">Explore o <span className="text-[#00FF85]">mundo</span> que você quiser.</h1>
+        <p className="text-lg font-light text-[#969696] text-center mb-8">Explore conteúdos sobre seus games, series e filmes favoritos, fique ligado nas notícias, jogue e interaja no Porão. Onde mundos se conectam.</p>
+        <h1 className="text-center text-white text-5xl font-extrabold mb-10 leading-snug">2023</h1>
       </div>
     </div>
     </div>
