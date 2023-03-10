@@ -1,16 +1,18 @@
-import '../../styles/globals.css'
-import type { AppProps } from 'next/app'
-import { Inter } from '@next/font/google'
+import "../../styles/globals.css";
+import type { AppProps } from "next/app";
+import { Familjen_Grotesk } from "@next/font/google";
 
-const inter = Inter({
-  weight: ['300', '400', '600', '700', '900'], 
-  subsets: ['latin'],
-})
+// const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+
+const familjenGrotesk = Familjen_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-grotesk",
+});
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={inter.className}>
+    <main className={familjenGrotesk.className}>
       <Component {...pageProps} />
     </main>
-  )
+  );
 }
