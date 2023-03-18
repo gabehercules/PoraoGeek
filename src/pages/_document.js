@@ -11,6 +11,7 @@ export default function Document() {
         ></Script>
         <Script
           strategy="afterInteractive"
+          id="gtm-script"
           dangerouslySetInnerHTML={{
             __html: `
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -24,6 +25,7 @@ export default function Document() {
       </Head>
       <body>
         <noscript
+          id="gtm-noscript"
           dangerouslySetInnerHTML={{
             __html: `
             <iframe src="https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM_TRACKING_ID}"
