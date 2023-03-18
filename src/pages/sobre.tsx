@@ -1,8 +1,17 @@
+import Head from "next/head";
 import Header from "../components/Header";
 
 export default function Sobre() {
   return (
     <>
+      <Head>
+        <title>Sobre - Porão Geek</title>
+        <meta
+          name="description"
+          content="Porão Geek - Onde mundos se conectam"
+        />
+        <link rel="icon" href="/favicon.png" />
+      </Head>
       <Header />
       <div className="flex flex-col gap-6 max-w-[650px] text-white m-auto py-6">
         <p className="text-lg text-zinc-300">
