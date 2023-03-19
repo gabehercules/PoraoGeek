@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Porão Geek</title>
+        <title>Porão Geek - Onde mundos se conectam!</title>
         <meta
           name="description"
           content="Porão Geek - Onde mundos se conectam"
