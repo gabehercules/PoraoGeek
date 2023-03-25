@@ -11,7 +11,7 @@ const familjenGrotesk = Familjen_Grotesk({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={familjenGrotesk.className}>
+    <main className={`${familjenGrotesk.className} h-screen`}>
       <Component {...pageProps} />
     </main>
   );

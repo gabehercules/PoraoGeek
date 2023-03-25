@@ -54,6 +54,15 @@ function Header() {
         <ul className="flex gap-4">
           <li>
             <Link
+              href="/login"
+              className="flex items-center gap-2 text-sm
+                  text-[#dcdcdc] transition duration-200"
+            >
+              Entrar
+            </Link>
+          </li>
+          <li>
+            <Link
               href="https://twitter.com/oporaogeek"
               target={"_blank"}
               className="flex items-center gap-2 text-sm
