@@ -1,4 +1,5 @@
 import FeaturedBanner from "../../components/Cms/Banners/FeaturedBanner";
+import Notifications from "../../components/Cms/Notifications";
 import Layout from "../../components/Layout";
 import ShardIcon from "../../components/ShardIcon";
 
@@ -10,6 +11,7 @@ export default function Dashboard({ posts }: { posts: any[] }) {
         <div className="flex gap-5 h-full">
           <div className="max-w-[70%] bg-darker-bg">
             <FeaturedBanner />
+            <Notifications />
             <div>
               <ul className="flex flex-wrap gap-4">
                 {posts.map((post) => (

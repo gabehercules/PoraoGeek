@@ -58,7 +58,7 @@ export default function Login() {
                 name="email"
                 id="email"
                 className="bg-darker-bg border-dark-border p-3 rounded-md text-white focus:ring-2
-                  focus:ring-brand-green/50 focus:border-brand-green focus:ringsha
+                  focus:ring-brand-green/50 focus:border-brand-green
                     hover:border-brand-green/50 hover:transition"
               />
             </div>
@@ -75,7 +75,7 @@ export default function Login() {
                 name="password"
                 id="password"
                 className="bg-darker-bg border-dark-border p-3 rounded-md text-white focus:ring-2
-                  focus:ring-brand-green/50 focus:border-brand-green focus:ringsha
+                  focus:ring-brand-green/50 focus:border-brand-green
                     hover:border-brand-green/50 hover:transition"
               />
               <a

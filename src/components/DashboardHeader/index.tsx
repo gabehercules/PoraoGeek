@@ -1,4 +1,5 @@
 import Logo from "../Logo";
+import SearchBar from "../SearchBar";
 
 export default function DashboardHeader() {
   return (
@@ -7,7 +8,9 @@ export default function DashboardHeader() {
         <Logo />
       </div>
 
-      <div className="flex gap-8 items-center"></div>
+      <div className="flex flex-1 gap-8 items-center">
+        <SearchBar />
+      </div>
     </div>
   );
 }

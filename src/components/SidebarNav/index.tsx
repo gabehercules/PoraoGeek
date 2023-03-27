@@ -6,6 +6,7 @@ import {
   LinkExternal,
 } from "@styled-icons/boxicons-regular";
 import Image from "next/image";
+import Link from "next/link";
 import { Fragment } from "react";
 import ShardIcon from "../ShardIcon";
 
@@ -118,12 +119,13 @@ export default function SidebarNav() {
           <ul className="flex flex-col flex-1 gap-3 list-none">
             {navLinks.map((link) => (
               <li key={link.toString()} className="flex text-white">
-                <a
+                <Link
                   href={link.url}
+                  title={link.title}
                   className="flex flex-1 transition p-2 hover:bg-dark-bg"
                 >
                   {link.title}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
