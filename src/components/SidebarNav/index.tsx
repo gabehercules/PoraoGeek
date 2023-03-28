@@ -77,9 +77,9 @@ export default function SidebarNav() {
               <Popover.Panel className="flex flex-col gap-2 w-full absolute left-0 z-10 bg-dark-bg border border-dark-border rounded-md mt-2 transition overflow-hidden">
                 <div>Alguma coisa</div>
                 <div className="flex flex-col text-white">
-                  <a href="/perfil">Meu Perfil</a>
-                  <a href="#">Notificações</a>
-                  <a href="#">Configurações</a>
+                  <Link href="/perfil">Meu Perfil</Link>
+                  <Link href="#">Notificações</Link>
+                  <Link href="#">Configurações</Link>
                 </div>
                 <div className="flex border-t border-dark-border">
                   <button className="flex flex-1 items-center gap-2 px-4 py-3 text-white text-sm leading-tight hover:bg-darker-bg/75">
