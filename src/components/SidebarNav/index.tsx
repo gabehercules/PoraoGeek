@@ -77,7 +77,7 @@ export default function SidebarNav() {
               <Popover.Panel className="flex flex-col gap-2 w-full absolute left-0 z-10 bg-dark-bg border border-dark-border rounded-md mt-2 transition overflow-hidden">
                 <div>Alguma coisa</div>
                 <div className="flex flex-col text-white">
-                  <a href="#">Meu Perfil</a>
+                  <a href="/perfil">Meu Perfil</a>
                   <a href="#">Notificações</a>
                   <a href="#">Configurações</a>
                 </div>

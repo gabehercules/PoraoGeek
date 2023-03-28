@@ -5,6 +5,7 @@
 @layer base {
   body {
     background-color: #101010;
+    @apply text-white;
   }
 
   h1,
