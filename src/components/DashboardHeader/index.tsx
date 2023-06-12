@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Logo from "../Logo";
 import SearchBar from "../SearchBar";
+import MainNavigation from "../MainNavigation";
 
 export default function DashboardHeader() {
   return (
@@ -13,6 +14,19 @@ export default function DashboardHeader() {
 
       <div className="flex flex-1 gap-8 items-center">
         <SearchBar />
+        <MainNavigation />
+
+        <div className="flex flex-1 gap-4 justify-end items-center">
+          <Link href="#" className="">
+            <span>Entrar</span>
+          </Link>
+          <Link
+            href="#"
+            className="bg-[#000] px-3 py-1 border border-zinc-700 rounded"
+          >
+            <span>Cadastrar</span>
+          </Link>
+        </div>
       </div>
     </div>
   );

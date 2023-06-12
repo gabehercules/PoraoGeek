@@ -6,7 +6,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="layout-grid w-full h-full ">
       <DashboardHeader />
       <SidebarNav />
-      <main className="main-container">{children}</main>
+      <main className="main-container flex flex-col">{children}</main>
     </div>
   );
 }

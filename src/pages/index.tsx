@@ -1,6 +1,6 @@
 import FeaturedBanner from "../components/Cms/Banners/FeaturedBanner";
-import Notifications from "../components/Cms/Notifications";
 import Layout from "../components/Layout";
+import PostListHome from "../components/Cms/PostListHome";
 import ShardIcon from "../components/ShardIcon";
 
 // adiconado uma gambiarra via copilot© para a tipagem de posts pq eu já num manjo de javascript quanto menos de typescript
@@ -8,15 +8,13 @@ export default function Dashboard() {
   return (
     <>
       <Layout>
-        <div className="flex gap-5 h-full">
-          <div className="max-w-[70%] bg-darker-bg">
+        <div className="flex w-[90%] max-w-[1190px] h-full overflow-y-scroll bg-darker-bg bg-red-200 gap-5 overflow-hidden">
+          <div className="flex flex-col flex-1 gap-6">
             <FeaturedBanner />
-            <Notifications />
             <div>
-              <ul className="flex flex-wrap gap-4">posts</ul>
+              <PostListHome />
             </div>
           </div>
-          <div className="bg-brand-green flex-1">side panel</div>
         </div>
       </Layout>
     </>
