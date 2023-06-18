@@ -4,6 +4,11 @@ import {
   ChevronDown,
   MessageDots,
   LinkExternal,
+  GridAlt,
+  BookContent,
+  Joystick,
+  Group,
+  Sidebar,
 } from "@styled-icons/boxicons-regular";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,35 +17,36 @@ import ShardIcon from "../ShardIcon";
 
 const navLinks = [
   {
-    title: "Central",
-    url: "/dashboard/",
+    title: "Início",
+    url: "/",
+    icon: <GridAlt width={24} />,
   },
   {
     title: "Notícias",
-    url: "/dashboard/noticias",
+    url: "/noticias",
+    icon: <BookContent width={24} />,
   },
   {
     title: "Grupos",
-    url: "/dashboard/grupos",
+    url: "/grupos",
+    icon: <Group width={24} />,
   },
   {
-    title: "Meus Jogos",
-    url: "/dashboard/meus-jogos",
-  },
-  {
-    title: "Explorar Jogos",
+    title: "Jogos",
     url: "/games",
+    icon: <Joystick width={24} />,
   },
   {
     title: "Mercado",
-    url: "/dashboard/Mercado",
+    url: "/mercado",
+    icon: <Sidebar width={24} />,
   },
 ];
 
 export default function SidebarNav() {
   return (
     <>
-      <div className="bg-dark-bg border-r border-dark-border sidenav-dashboard">
+      <div className="flex flex-col bg-dark-bg border-r border-dark-border sidenav-dashboard">
         <div className="p-3 border-b border-dark-border">
           <Popover className="relative transition">
             <Popover.Button
@@ -115,20 +121,36 @@ export default function SidebarNav() {
             </div>
           </div>
         </div>
-        <div className="flex bg-darker-bg p-3">
+
+        <div className="flex flex-1 bg-darker-bg p-3">
           <ul className="flex flex-col flex-1 gap-3 list-none">
             {navLinks.map((link) => (
               <li key={link.toString()} className="flex text-white">
                 <Link
                   href={link.url}
                   title={link.title}
-                  className="flex flex-1 transition p-2 hover:bg-dark-bg"
+                  className="flex flex-1 gap-3 transition p-2 hover:bg-dark-bg"
                 >
+                  {link.icon}
                   {link.title}
                 </Link>
               </li>
             ))}
           </ul>
+        </div>
+
+        <div className="p-2 border-t border-dark-border">
+          <Link
+            href="#"
+            className="flex justify-center gap-2 text-zinc-400 p-2 rounded hover:bg-darker-bg/75 hover:text-white transition-colors "
+          >
+            <MessageDots width={20} />
+            Feedback
+          </Link>
+        </div>
+
+        <div className="p-2 text-sm text-center text-zinc-400">
+          <p>Beta - 0.1.0</p>
         </div>
       </div>
     </>

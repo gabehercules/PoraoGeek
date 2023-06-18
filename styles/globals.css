@@ -22,6 +22,26 @@
   }
 }
 
+@layer utilities {
+  .main-container::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+
+  .main-container::-webkit-scrollbar-track {
+    background: #181818;
+  }
+
+  .main-container::-webkit-scrollbar-thumb {
+    background: #222;
+    border: 0px solid #121212;
+  }
+
+  .main-container::-webkit-scrollbar-thumb:hover {
+    background: #444;
+  }
+}
+
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -31,19 +51,54 @@ input[type="search"] {
 
 .layout-grid {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  grid-template-rows: 6vh 1fr;
-  grid-template-areas: "header header" "sidebar main";
+  grid-template-columns: 280px 1fr 300px;
+  grid-template-rows: 6vh 50px 1fr;
+  grid-template-areas:
+      "header header header"
+      "sidebar main-topbar sidepanel"
+      "sidebar main sidepanel";
 }
 
 .header-dashboard {
   grid-area: header;
 }
 
-.sidebar-dashboard {
+.sidenav-dashboard {
   grid-area: sidebar;
+}
+
+.sidepanel {
+  grid-area: sidepanel;
+}
+
+.main-topbar {
+  grid-area: main-topbar;
 }
 
 .main-container {
   grid-area: main;
+}
+
+.post-content h1 {
+  @apply text-4xl font-bold;
+}
+
+.post-content p {
+  @apply text-zinc-300 text-lg mb-6;
+}
+
+.post-content p a {
+  @apply text-brand-green border-b border-dashed border-b-brand-green;
+}
+
+.post-content p a strong {
+  @apply text-brand-green border-b border-dashed border-b-brand-green;
+}
+
+.post-content p a:hover {
+  @apply text-brand-green/50 transition-colors duration-300;
+}
+
+.post-content p strong {
+  @apply text-white;
 }

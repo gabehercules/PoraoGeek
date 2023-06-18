@@ -1,11 +1,12 @@
 const posts = [
     {
         id: 1,
-        title: 'Starfiel: Confira nossa análise do jogo',
+        slug: 'starfield-confira-nossa-analise-do-jogo',
+        title: 'Starfield: Confira nossa análise do jogo',
         description: 'Jogamos Starfield e contamos tudo o que você precisa saber sobre o novo jogo da Bethesda',
         link: {
             label: 'Leia mais',
-            url: '#',
+            url: '/noticias/post',
         },
         image: {
             src: '/starfield.jpg',
@@ -14,11 +15,12 @@ const posts = [
     },
     {
         id: 2,
-        title: 'Starfiel: Confira nossa análise do jogo',
+        slug: 'starfield-confira-nossa-analise-do-jogo',
+        title: 'Starfield: Confira nossa análise do jogo',
         description: 'Jogamos Starfield e contamos tudo o que você precisa saber sobre o novo jogo da Bethesda',
         link: {
             label: 'Leia mais',
-            url: '#',
+            url: '/noticias/post',
         },
         image: {
             src: '/starfield.jpg',
@@ -27,11 +29,12 @@ const posts = [
     },
     {
         id: 3,
-        title: 'Starfiel: Confira nossa análise do jogo',
+        slug: 'starfield-confira-nossa-analise-do-jogo',
+        title: 'Starfield: Confira nossa análise do jogo',
         description: 'Jogamos Starfield e contamos tudo o que você precisa saber sobre o novo jogo da Bethesda',
         link: {
             label: 'Leia mais',
-            url: '#',
+            url: '/noticias/post',
         },
         image: {
             src: '/starfield.jpg',
@@ -40,11 +43,12 @@ const posts = [
     },
     {
         id: 4,
-        title: 'Starfiel: Confira nossa análise do jogo',
+        slug: 'starfield-confira-nossa-analise-do-jogo',
+        title: 'Starfield: Confira nossa análise do jogo',
         description: 'Jogamos Starfield e contamos tudo o que você precisa saber sobre o novo jogo da Bethesda',
         link: {
             label: 'Leia mais',
-            url: '#',
+            url: '/noticias/post',
         },
         image: {
             src: '/starfield.jpg',
@@ -53,11 +57,12 @@ const posts = [
     },
     {
         id: 5,
-        title: 'Starfiel: Confira nossa análise do jogo',
+        slug: 'starfield-confira-nossa-analise-do-jogo',
+        title: 'Starfield: Confira nossa análise do jogo',
         description: 'Jogamos Starfield e contamos tudo o que você precisa saber sobre o novo jogo da Bethesda',
         link: {
             label: 'Leia mais',
-            url: '#',
+            url: '/noticias/post',
         },
         image: {
             src: '/starfield.jpg',
@@ -66,11 +71,12 @@ const posts = [
     },   
     {
         id: 6,
-        title: 'Starfiel: Confira nossa análise do jogo',
+        slug: 'starfield-confira-nossa-analise-do-jogo',
+        title: 'Starfield: Confira nossa análise do jogo',
         description: 'Jogamos Starfield e contamos tudo o que você precisa saber sobre o novo jogo da Bethesda',
         link: {
             label: 'Leia mais',
-            url: '#',
+            url: '/noticias/post',
         },
         image: {
             src: '/starfield.jpg',
@@ -79,11 +85,12 @@ const posts = [
     },
     {
         id: 7,
-        title: 'Starfiel: Confira nossa análise do jogo',
+        slug: 'starfield-confira-nossa-analise-do-jogo',
+        title: 'Starfield: Confira nossa análise do jogo',
         description: 'Jogamos Starfield e contamos tudo o que você precisa saber sobre o novo jogo da Bethesda',
         link: {
             label: 'Leia mais',
-            url: '#',
+            url: '/noticias/post',
         },
         image: {
             src: '/starfield.jpg',
@@ -92,11 +99,12 @@ const posts = [
     },
     {
         id: 8,
-        title: 'Starfiel: Confira nossa análise do jogo',
+        slug: 'starfield-confira-nossa-analise-do-jogo',
+        title: 'Starfield: Confira nossa análise do jogo',
         description: 'Jogamos Starfield e contamos tudo o que você precisa saber sobre o novo jogo da Bethesda',
         link: {
             label: 'Leia mais',
-            url: '#',
+            url: '/noticias/post',
         },
         image: {
             src: '/starfield.jpg',
@@ -105,11 +113,12 @@ const posts = [
     },
     {
         id: 9,
-        title: 'Starfiel: Confira nossa análise do jogo',
+        slug: 'starfield-confira-nossa-analise-do-jogo',
+        title: 'Starfield: Confira nossa análise do jogo',
         description: 'Jogamos Starfield e contamos tudo o que você precisa saber sobre o novo jogo da Bethesda',
         link: {
             label: 'Leia mais',
-            url: '#',
+            url: '/noticias/post',
         },
         image: {
             src: '/starfield.jpg',

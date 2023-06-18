@@ -2,22 +2,30 @@ import Image from "next/image";
 import posts from "./data";
 import Link from "next/link";
 
+
+// limita a quantidade de posts que aparecem na tela - temporário
+const limit = 9;
+
+const postsSlice = posts.slice(0, limit);
+
 export default function PostList() {
   return (
     <ul className="grid grid-cols-3 gap-10">
-      {posts.map((post, index) => (
+      {postsSlice.map((post, index) => (
         <li
           key={index}
-          className="group bg-[#111] rounded-[10px] overflow-hidden hover:bg-[#141414] transition-colors duration-500"
+          className="flex flex-col group bg-[#111] rounded-[10px] hover:bg-[#141414] transition-colors duration-500 overflow-hidden"
         >
           <Link href={post.link.url} className="flex flex-col">
-            <Image
-              src={post.image.src}
-              alt={post.image.alt}
-              width={300}
-              height={150}
-              className="w-full group-hover:scale-105 transition-all duration-500"
-            />
+            <div className="flex">
+              <Image
+                src={post.image.src}
+                alt={post.image.alt}
+                width={300}
+                height={150}
+                className="w-full group-hover:scale-105 transition-all duration-500"
+              />
+            </div>
             <div className="flex flex-col gap-2 p-4">
               <h2>{post.title}</h2>
               <div className="flex items-center gap-3 border-zinc-800">
