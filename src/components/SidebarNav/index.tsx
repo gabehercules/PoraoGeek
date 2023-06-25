@@ -1,3 +1,5 @@
+"use client";
+
 import { Popover, Transition } from "@headlessui/react";
 import {
   LogOut,
@@ -12,7 +14,7 @@ import {
 } from "@styled-icons/boxicons-regular";
 import Image from "next/image";
 import Link from "next/link";
-import { Fragment } from "react";
+import { Fragment, use } from "react";
 import ShardIcon from "../ShardIcon";
 
 const navLinks = [

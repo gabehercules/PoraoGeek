@@ -17,7 +17,7 @@ export default function DashboardHeader() {
         <MainNavigation />
 
         <div className="flex flex-1 gap-4 justify-end items-center">
-          <Link href="#" className="">
+          <Link href="/login" className="">
             <span>Entrar</span>
           </Link>
           <Link

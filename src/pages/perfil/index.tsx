@@ -7,10 +7,10 @@ import UserProfileNavbar from "../../components/UserProfileNavbar";
 export default function Perfil() {
   return (
     <Layout>
-      <div className="flex h-full">
-        <div className="w-[70%]">
+      <div className="flex w-full p-10">
+        <div className="">
           {/* seção perfil */}
-          <div className="p-6">
+          <div className="">
             {/* banner de capa */}
             {/* <div className="w-full h-[230px] bg-dark-border"></div> */}
             <div className="flex gap-4 items-center">
@@ -44,7 +44,6 @@ export default function Perfil() {
 
           {/* seção de conteúdo */}
         </div>
-        <div className="flex flex-1 bg-brand-green">ola</div>
       </div>
     </Layout>
   );

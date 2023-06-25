@@ -23,21 +23,21 @@
 }
 
 @layer utilities {
-  .main-container::-webkit-scrollbar {
+  ::-webkit-scrollbar {
     width: 7px;
     height: 7px;
   }
 
-  .main-container::-webkit-scrollbar-track {
+  ::-webkit-scrollbar-track {
     background: #181818;
   }
 
-  .main-container::-webkit-scrollbar-thumb {
+  ::-webkit-scrollbar-thumb {
     background: #222;
     border: 0px solid #121212;
   }
 
-  .main-container::-webkit-scrollbar-thumb:hover {
+  ::-webkit-scrollbar-thumb:hover {
     background: #444;
   }
 }

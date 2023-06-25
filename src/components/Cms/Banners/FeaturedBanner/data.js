@@ -1,13 +1,13 @@
 const bannerExample = {
-    title: 'Starfiel: Confira nossa análise do jogo',
-    description: 'Jogamos Starfield e contamos tudo o que você precisa saber sobre o novo jogo da Bethesda',
+    title: 'Apoie o Porão Geek',
+    description: 'Acabamos de lançar nossa campanha no Apoia.se. Lá você pode nos ajudar a construir essa comunidade e ainda ganhar recompensas exclusivas.',
     link: {
-        label: 'Leia mais',
-        url: '#',
+        label: 'Veja a campanha no Apoia.se',
+        url: 'https://apoia.se/poraogeek',
     },
     image: {
-        src: '/starfield.jpg',
-        alt: 'Starfield',
+        src: '/apoiase-banner.jpg',
+        alt: 'apoiase',
     }
 }
 

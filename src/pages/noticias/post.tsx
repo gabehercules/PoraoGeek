@@ -1,9 +1,18 @@
+import { useState } from "react";
 import DashboardHeader from "../../components/DashboardHeader";
 import posts from "../../components/Cms/PostListHome/data";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
-import { ChevronLeft } from "@styled-icons/boxicons-regular";
+import {
+  ChevronLeft,
+  CopyAlt,
+  FontSize,
+  ToggleLeft,
+  DotsVerticalRounded,
+} from "@styled-icons/boxicons-regular";
+import { Popover } from "@headlessui/react";
 
 interface Post {
   id: number;
@@ -23,6 +32,24 @@ interface Post {
 const starfield: Post = posts[0];
 
 export default function Post() {
+  const [copied, setCopied] = useState(false);
+
+  const router = useRouter();
+  const { route } = router;
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
+  console.log("A URL completa é: " + baseUrl + route);
+
+  const handleCopyToClipboard = () => {
+    navigator.clipboard
+      .writeText(baseUrl + route)
+      .then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 3000);
+      })
+      .catch((error) => console.error("Erro ao copiar: ", error));
+  };
+
   return (
     <div>
       <DashboardHeader />
@@ -49,6 +76,39 @@ export default function Post() {
               <span>Nome autor - 11/05/2023</span>
             </div>
           </div>
+
+          {/* opções de compartilhamento e acessibilidade */}
+          <Popover>
+            <Popover.Button className="w-10 h-10 flex items-center justify-center p-2 border border-transparent rounded-md hover:bg-dark-bg hover:border-dark-border">
+              <DotsVerticalRounded width={20} />
+            </Popover.Button>
+            <Popover.Panel className="absolute translate-y-2 flex flex-col p-2 bg-darker-bg border border-dark-border rounded">
+              <div>
+                <button
+                  onClick={handleCopyToClipboard}
+                  className="flex w-full gap-2 items-center p-3 rounded hover:bg-zinc-800"
+                >
+                  <CopyAlt width={20} />
+                  {copied ? "Link copiado" : "Copiar link do post"}
+                </button>
+              </div>
+              <div>
+                <button className="flex w-full gap-2 items-center p-3 rounded hover:bg-zinc-800">
+                  <FontSize width={20} />
+                  Tamanho da fonte
+                </button>
+              </div>
+              <div>
+                <button className="flex w-full gap-2 items-center p-3 rounded hover:bg-zinc-800 cursor-not-allowed opacity-50">
+                  <ToggleLeft width={20} />
+                  Tema{" "}
+                  <span className="text-xs p-1 bg-red-600 rounded">
+                    Em breve
+                  </span>
+                </button>
+              </div>
+            </Popover.Panel>
+          </Popover>
 
           <Image
             src={starfield.image.src}

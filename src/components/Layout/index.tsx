@@ -1,10 +1,12 @@
+"use client";
+
 import DashboardHeader from "../DashboardHeader";
 import MainTopBar from "../MainTopBar";
 import SidebarNav from "../SidebarNav";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="layout-grid w-full h-full ">
+    <div className="layout-grid w-full h-screen ">
       <DashboardHeader />
       <SidebarNav />
       <MainTopBar />

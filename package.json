@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.12",
-    "@next/font": "^13.4.4",
     "@styled-icons/boxicons-logos": "^10.47.0",
     "@styled-icons/boxicons-regular": "^10.47.0",
     "@types/node": "18.11.10",

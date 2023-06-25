@@ -1,6 +1,6 @@
 import "../../styles/globals.css";
 import type { AppProps } from "next/app";
-import { Familjen_Grotesk } from "@next/font/google";
+import { Familjen_Grotesk } from "next/font/google";
 
 // const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
