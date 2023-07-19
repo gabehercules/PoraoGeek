@@ -54,7 +54,7 @@ function Header() {
         <ul className="flex gap-4">
           <li>
             <Link
-              href="/login"
+              href="/entrar"
               className="flex items-center gap-2 text-sm
                   text-[#dcdcdc] transition duration-200"
             >

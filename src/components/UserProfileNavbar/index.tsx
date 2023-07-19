@@ -34,7 +34,7 @@ export default function UserProfileNavbar() {
           <li key={link.name} className="flex items-center flex-1">
             <Link
               href={link.route}
-              className="flex flex-1 items-center justify-center hover:bg-darker-bg py-2"
+              className="flex flex-1 items-center justify-center hover:bg-dark-primary py-2"
             >
               {link.icon}
               {link.name}

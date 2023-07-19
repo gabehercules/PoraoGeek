@@ -16,8 +16,8 @@ export default function UserWidget() {
       <Popover className="flex relative transition justify-end">
         <Popover.Button
           className="flex items-center gap-2 p-2 rounded-md border border-transparent transition
-              hover:bg-darker-bg hover:border hover:border-dark-border
-                focus:ring-0 focus:outline-none active:bg-darker-bg
+              hover:bg-dark-primary hover:border hover:border-dark-border
+                focus:ring-0 focus:outline-none active:bg-dark-primary
                 focus-visible:border focus-visible:border-dark-border
               active:border-dark-border"
         >
@@ -42,14 +42,14 @@ export default function UserWidget() {
           leaveFrom="opacity-100 translate-y-0"
           leaveTo="opacity-0 -translate-y-4"
         >
-          <Popover.Panel className="flex flex-col gap-2 w-[240px] absolute top-full z-10 bg-dark-bg border border-dark-border rounded-md mt-1 transition overflow-hidden shadow-lg shadow-black/50">
+          <Popover.Panel className="flex flex-col gap-2 w-[240px] absolute top-full z-10 bg-dark-secondary border border-dark-border rounded-md mt-1 transition overflow-hidden shadow-lg shadow-black/50">
             <div className="flex gap-1 flex-col text-white">
-              <Link href="/me/" className="py-2 px-4 hover:bg-darker-bg">
+              <Link href="/me/" className="py-2 px-4 hover:bg-dark-primary">
                 Meu Perfil
               </Link>
               <Link
                 href="/me/configuracoes"
-                className="py-2 px-4 hover:bg-darker-bg"
+                className="py-2 px-4 hover:bg-dark-primary"
               >
                 Configurações
               </Link>
@@ -61,7 +61,7 @@ export default function UserWidget() {
               </Link>
             </div>
             <div className="flex border-t border-dark-border">
-              <button className="flex flex-1 items-center gap-2 px-4 py-3 text-white text-sm hover:bg-darker-bg/75">
+              <button className="flex flex-1 items-center gap-2 px-4 py-3 text-white text-sm hover:bg-dark-primary/75">
                 <MessageDots width={16} />
                 <span className="self-start flex-1 leading-none">
                   Enviar Feedback

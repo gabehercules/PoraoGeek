@@ -17,7 +17,7 @@ export default function SearchBar() {
               id="search"
               name="search"
               placeholder={"Pesquise qualquer coisa"}
-              className="w-[280px] flex border bg-darker-bg text-white border-dark-border rounded py-1 px-8 placeholder:text-dark-text placeholder:text-base placeholder:leading-none"
+              className="w-[280px] flex border bg-dark-primary text-white border-dark-border rounded py-1 px-8 placeholder:text-dark-text placeholder:text-base placeholder:leading-none"
             />
           </div>
         </form>

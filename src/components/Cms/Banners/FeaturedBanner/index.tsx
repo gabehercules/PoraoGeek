@@ -7,7 +7,7 @@ console.log(bannerExample);
 
 export default function FeaturedBanner() {
   return (
-    <div className="flex h-[260px] bg-dark-bg overflow-hidden rounded-md border border-dark-border">
+    <div className="flex h-[260px] bg-dark-secondary overflow-hidden rounded-md border border-dark-border">
       <div className="flex flex-col items-start flex-1 p-6 border-r border-dark-border">
         <Image
           src="/pg+apoiase.png"

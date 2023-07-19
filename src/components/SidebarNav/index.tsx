@@ -49,15 +49,15 @@ export default function SidebarNav() {
 
   return (
     <>
-      <div className="flex flex-col bg-dark-bg border-r border-dark-border sidenav-dashboard">
-        <div className="flex flex-1 bg-darker-bg p-3">
+      <div className="flex flex-col bg-dark-secondary border-r border-dark-border sidenav-dashboard">
+        <div className="flex flex-1 bg-dark-primary p-3">
           <ul className="flex flex-col flex-1 gap-3 list-none">
-            {navLinks.map((link) => (
-              <li key={link.toString()} className="flex text-white">
+            {navLinks.map((link, i) => (
+              <li key={i} className="flex text-white">
                 <Link
                   href={link.url}
                   title={link.title}
-                  className="flex flex-1 gap-3 transition p-2 hover:bg-dark-bg"
+                  className="flex flex-1 gap-3 transition p-2 hover:bg-dark-secondary"
                 >
                   {link.icon}
                   {link.title}
@@ -70,7 +70,7 @@ export default function SidebarNav() {
         <div className="p-2 border-t border-dark-border">
           <button
             onClick={handleToggleModal}
-            className="w-full flex justify-center gap-2 text-zinc-400 p-2 rounded hover:bg-darker-bg/75 hover:text-white transition-colors "
+            className="w-full flex justify-center gap-2 text-zinc-400 p-2 rounded hover:bg-dark-primary/75 hover:text-white transition-colors "
           >
             <MessageDots width={20} />
             Feedback
@@ -101,13 +101,13 @@ export default function SidebarNav() {
                     leaveFrom="opacity-100 scale-100"
                     leaveTo="opacity-0 scale-95"
                   >
-                    <Dialog.Panel className="w-full max-w-md transform overflow-hidden border border-dark-border rounded-md bg-darker-bg p-6 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Panel className="w-full max-w-md transform overflow-hidden border border-dark-border rounded-md bg-dark-primary p-6 text-left align-middle shadow-xl transition-all">
                       <FeedbackForm />
 
                       <div className="mt-4">
                         <button
                           type="button"
-                          className="w-full rounded-md bg-dark-bg py-2 font-medium text-zinc-500 hover:bg-red-500/10 hover:text-red-500/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                          className="w-full rounded-md bg-dark-secondary py-2 font-medium text-zinc-500 hover:bg-red-500/10 hover:text-red-500/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           onClick={handleToggleModal}
                         >
                           Cancelar

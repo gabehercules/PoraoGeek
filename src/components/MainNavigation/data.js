@@ -22,7 +22,7 @@ const navigationLinks = [
     {
         id: 5,
         title: 'Cadastre-se',
-        path: '/cadastre-se',
+        path: '/cadastrar',
     },
 ]
 

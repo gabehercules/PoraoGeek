@@ -1,1 +1,9 @@
-export const postsEndpoint = "https://poraogeek.com.br/wp-json/wp/v2/posts";
+export const fetchBlogPosts = async () => {
+  const response = await fetch("http://localhost:1337/api/posts");
+
+  if (!response.ok) {
+    throw new Error("Erro ao buscar os posts do blog");
+  }
+
+  return response.json();
+};

@@ -1,24 +1,46 @@
 import Image from "next/image";
 import posts from "./data";
-import Link from "next/link";
+// import Link from "next/link";
+// import client from "../../../graphql/client";
+// import { GET_POSTS } from "../../../graphql/queries";
+import { NextRequest } from "next/server";
 
 // limita a quantidade de posts que aparecem na tela - temporário
-const limit = 9;
+// const limit = 9;
 
-const postsSlice = posts.slice(0, limit);
+// const postsSlice = posts.slice(0, limit);
 
-export default function PostList() {
+// interface PostProps {
+//   id: string;
+//   attributes: {
+//     title: string;
+//     description: string;
+//     content: string;
+//   }
+// }
+
+const getPosts = async () => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+
+  return res.json();
+}
+
+export default async function PostList() {
+  const data = await getPosts();
+  
+  console.log(data);
+
   return (
     <>
-      <div>
+      {/* <div>
         <div>
           <h1>Últimas notícias</h1>
         </div>
       </div>
       <ul className="grid grid-cols-3 gap-10">
-        {postsSlice.map((post, index) => (
+        {posts.map((post) => (
           <li
-            key={index}
+            key={post.id}
             className="flex flex-col group bg-[#111] rounded-[10px] hover:bg-[#141414] transition-colors duration-500 overflow-hidden"
           >
             <Link href={post.link.url} className="flex flex-col">
@@ -48,7 +70,7 @@ export default function PostList() {
             </Link>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </>
   );
 }

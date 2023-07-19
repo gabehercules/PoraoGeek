@@ -2,19 +2,19 @@
 
 import React from "react";
 import { DiscordAlt, Google } from "@styled-icons/boxicons-logos/";
-import Logo from "../../components/Logo";
+import Logo from "../../../components/Logo";
 import Link from "next/link";
 
-export default function page() {
+export default function Page() {
   return (
     <div className="flex h-screen">
       <div className="w-[52vw] bg-[url('/hero-login.webp')]">Image</div>
       <div className="flex flex-1 items-center justify-center">
         <div className="w-[400px] flex shadow-md">
           <form
-            action="/"
-            method=""
-            id="register-form"
+            action="/dashboard"
+            method="POST"
+            id="login-form"
             className="flex flex-col flex-1 gap-6"
           >
             <div className="flex flex-col items-center">
@@ -22,7 +22,7 @@ export default function page() {
                 <Logo />
               </div>
               <h1 className="text-3xl text-white font-bold text-center mb-6">
-                Cadastre-se no Porão Geek
+                Bem-vindo(a), novamente!
               </h1>
             </div>
 
@@ -46,7 +46,7 @@ export default function page() {
                 before:flex before:flex-1 before:h-[1px] before:bg-dark-border before:align-middle
                 after:flex after:flex-1 after:h-[1px] after:bg-dark-border after:align-middle"
             >
-              ou cadastre-se com seu e-mail
+              ou entre com e-mail e senha
             </p>
 
             <div className="flex flex-col">
@@ -60,7 +60,7 @@ export default function page() {
                 type="email"
                 name="email"
                 id="email"
-                className="bg-darker-bg border-dark-border p-3 rounded-md text-white focus:ring-2
+                className="bg-dark-primary border-dark-border p-3 rounded-md text-white focus:ring-2
                   focus:ring-brand-green/50 focus:border-brand-green
                     hover:border-brand-green/50 hover:transition"
               />
@@ -77,40 +77,29 @@ export default function page() {
                 type="password"
                 name="password"
                 id="password"
-                className="bg-darker-bg border-dark-border p-3 rounded-md text-white focus:ring-2
+                className="bg-dark-primary border-dark-border p-3 rounded-md text-white focus:ring-2
                   focus:ring-brand-green/50 focus:border-brand-green
                     hover:border-brand-green/50 hover:transition"
               />
-            </div>
-
-            <div className="flex flex-col">
-              <label
-                htmlFor="confirm-password"
-                className="text-sm text-dark-text mb-1 leading-none"
+              <a
+                href="#"
+                className="flex items-start text-sm text-dark-text underline mt-1"
               >
-                Confirme a Senha
-              </label>
-              <input
-                type="password"
-                name="confirm-password"
-                id="confirm-password"
-                className="bg-darker-bg border-dark-border p-3 rounded-md text-white focus:ring-2
-                  focus:ring-brand-green/50 focus:border-brand-green
-                    hover:border-brand-green/50 hover:transition"
-              />
+                Esqueci minha senha
+              </a>
             </div>
 
             <button
               type="submit"
-              className="flex flex-1 justify-center p-3 mt-2 rounded-md bg-brand-green text-dark-bg text-center"
+              className="flex flex-1 justify-center p-3 mt-2 rounded-md bg-brand-green text-dark-secondary text-center"
             >
-              Cadastrar
+              Entrar
             </button>
             <div>
               <p className="text-sm text-white">
-                Já possí conta?{" "}
-                <Link href="/login" className="text-brand-green">
-                  Faça o login
+                Não tem uma conta?{" "}
+                <Link href="/cadastrar" className="text-brand-green">
+                  Cadastre-se
                 </Link>
               </p>
             </div>

@@ -16,7 +16,7 @@ export default function FeedbackForm() {
           name="message"
           id="message"
           placeholder="Deixe seus comentários"
-          className="h-[120px] bg-darker-bg border-dark-border p-4 rounded-md text-sm text-zinc-300 focus:ring-transparent focus:border-brand-green resize-none"
+          className="h-[120px] bg-dark-primary border-dark-border p-4 rounded-md text-sm text-zinc-300 focus:ring-transparent focus:border-brand-green resize-none"
         />
         <button
           type="submit"

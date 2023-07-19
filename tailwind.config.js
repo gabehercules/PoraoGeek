@@ -8,13 +8,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "darker-bg": "#0B0B0B",
-        "dark-bg": "#101010",
+        "dark-primary": "#0B0B0B",
+        "dark-secondary": "#101010",
         "light-bg": "#161616",
         "brand-green": "#00FF85",
-        "dark-border": "#282828",
+        "dark-border": "#181818",
         "light-text": "#FFFFFF",
         "dark-text": "#676767",
+
+        "light-primary": "#FFFFFF",
       },
       fontFamily: {
         familjenGrotesk: ["Familjen Grotesk"],

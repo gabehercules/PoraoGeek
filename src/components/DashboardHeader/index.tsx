@@ -13,7 +13,7 @@ const user = true;
 
 export default function DashboardHeader() {
   return (
-    <div className="flex gap-8 items-center justify-between w-full border-b bg-dark-bg border-dark-border p-4 header-dashboard">
+    <div className="flex gap-8 items-center justify-between w-full border-b bg-dark-secondary border-dark-border p-4 header-dashboard">
       <div className="w-[120px]">
         <Link href="/">
           <Logo />
@@ -26,7 +26,7 @@ export default function DashboardHeader() {
 
         {!user ? (
           <div className="flex flex-1 gap-4 items-center justify-end">
-            <Link href="/login" className="">
+            <Link href="/entrar" className="">
               <span>Entrar</span>
             </Link>
             <Link
