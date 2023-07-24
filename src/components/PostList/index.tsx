@@ -34,7 +34,7 @@ export default async function PostList() {
   
   const posts = data;
 
-  console.log(posts);
+  console.log("LOG DOS POSTS AQUI", posts);
 
 
   return (
