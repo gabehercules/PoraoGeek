@@ -15,6 +15,9 @@ async function fetchRecentPosts() {
       }
     );
 
+    console.log("LOG DO RES", res);
+    console.log("LOG DO STRAPI", process.env.STRAPI_API_URL);
+
     return res.json();
   } catch (error) {
     console.log("Error fetching posts", error);
