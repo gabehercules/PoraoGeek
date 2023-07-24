@@ -24,15 +24,17 @@ async function fetchRecentPosts() {
 }
 
 export default async function PostList() {
-  const { data } = await fetchRecentPosts();
+  const {data} = await fetchRecentPosts();
 
   // async function handleLoadMore() {
   //   let page = 1;
   //   return await fetchRecentPosts(page++);
   // }
 
-
+  
   const posts = data;
+
+  console.log(posts);
 
 
   return (
