@@ -10,7 +10,7 @@ async function fetchRecentPosts() {
   try {
     
     const res = await fetch(
-      `${process.env.STRAPI_API_DEV}/api/posts?pagination[page]=1&pagination[pageSize]=30&populate=*`,
+      `${process.env.STRAPI_API_URL}/api/posts?pagination[page]=1&pagination[pageSize]=30&populate=*`,
       {
         cache: "no-store",
       }
