@@ -1,4 +1,4 @@
-import FeaturedBanner from "../../components/Cms/Banners/FeaturedBanner";
+// import FeaturedBanner from "../../components/Cms/Banners/FeaturedBanner";
 import PostList from "../../components/PostList";
 
 export default async function Page() {

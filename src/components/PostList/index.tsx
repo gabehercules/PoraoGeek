@@ -8,7 +8,6 @@ async function fetchRecentPosts() {
   // }
 
   try {
-    
     const res = await fetch(
       `${process.env.STRAPI_API_URL}/api/posts?pagination[page]=1&pagination[pageSize]=30&populate=*`,
       {
@@ -37,7 +36,7 @@ export default async function PostList() {
 
 
   return (
-    <>
+    <div>
       <ul className="grid grid-cols-3 gap-10">
         {posts.map((post: any) => (
           <PostCard
@@ -50,6 +49,6 @@ export default async function PostList() {
           />
         ))}
       </ul>
-    </>
+    </div>
   );
 }

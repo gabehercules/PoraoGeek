@@ -22,7 +22,7 @@ interface PostProps {
 
 const fetchPosts = async (slug: string) => {
   const response = await fetch(
-    `${process.env.STRAPI_API_DEV}/api/posts?filters[post_slug][$eq]=${slug}&populate=*`,
+    `${process.env.STRAPI_API_URL}/api/posts?filters[post_slug][$eq]=${slug}&populate=*`,
     { cache: "no-cache" }
   );
 
