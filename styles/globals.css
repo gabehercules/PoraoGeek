@@ -82,27 +82,3 @@ input[type="search"] {
 .main-container {
   grid-area: main;
 }
-
-.post-content h1 {
-  @apply text-4xl font-bold;
-}
-
-.post-content p {
-  @apply text-zinc-300 text-lg mb-6;
-}
-
-.post-content p a {
-  @apply text-brand-green border-b border-dashed border-b-brand-green;
-}
-
-.post-content p a strong {
-  @apply text-brand-green border-b border-dashed border-b-brand-green;
-}
-
-.post-content p a:hover {
-  @apply text-brand-green/50 transition-colors duration-300;
-}
-
-.post-content p strong {
-  @apply text-white;
-}

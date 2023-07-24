@@ -7,6 +7,7 @@ interface PostCardProps {
   title: string;
   featuredImage?: string;
   slug: string;
+  date: any; // arrumar essa porra dps e TIPAR A DATA na função formatDate em functions.ts
 }
 
 export default function PostCard({
@@ -14,6 +15,7 @@ export default function PostCard({
   title,
   featuredImage,
   slug,
+  date,
 }: PostCardProps) {
   // const { data } = await getPosts();
 
@@ -41,7 +43,7 @@ export default function PostCard({
           <span className="flex items-center justify-center w-8 h-8 text-sm rounded-full bg-gray-400">
             PG
           </span>
-          <span className="text-sm">22/06</span>
+          <span className="text-sm">{date}</span>
         </div>
       </Link>
     </li>

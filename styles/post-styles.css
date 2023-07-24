@@ -1,0 +1,85 @@
+
+
+.post-content h1 {
+    @apply text-4xl font-bold mb-4;
+  }
+  
+  .post-content h2 {
+    @apply text-3xl font-bold mb-4;
+  }
+  
+  .post-content h3 {
+    @apply text-2xl font-bold mb-4;
+  }
+  
+  .post-content h4 {
+    @apply text-xl font-bold mb-4;
+  }
+  
+  .post-content h5 {
+    @apply text-lg font-bold mb-4;
+  }
+  
+  .post-content h6 {
+    @apply text-base font-bold mb-4;
+  }
+  
+  .post-content blockquote {
+    @apply p-4 border-l-4 border-brand-green/50 bg-dark-secondary text-white/50;
+  }
+  
+  .post-content figure {
+    @apply w-full rounded-lg shadow-lg;
+  }
+  
+  .post-content p img, figure img {
+    @apply w-full rounded-lg shadow-lg;
+  }
+  
+  .post-content p {
+    @apply text-white mb-4 leading-loose;
+  }
+  
+  .post-content a {
+    @apply text-brand-green border-b border-dashed border-b-brand-green;
+  }
+  
+  .post-content a:hover {
+    @apply text-brand-green/50 transition-colors duration-300;
+  }
+  
+  .post-content p a strong {
+    @apply text-brand-green border-b border-dashed border-b-brand-green;
+  }
+  
+  .post-content p code {
+    @apply font-mono p-1 bg-dark-secondary text-white/50 rounded border border-dark-border;
+  }
+  
+  .post-content p strong {
+    @apply text-white;
+  }
+  
+  .post-content figcaption {
+    @apply p-2 border border-dark-border rounded mt-2 bg-dark-secondary text-dark-text text-sm;
+  }
+  
+  .post-content pre {
+    @apply p-4 border border-dark-border rounded mt-2 bg-dark-secondary text-dark-text text-sm;
+  }
+  
+  .post-content pre:hover {
+    @apply border-brand-green/30 transition-colors duration-300 text-white/60;
+  }
+  
+  .post-content ul {
+    @apply list-inside list-disc;
+  }
+  
+  .post-content ol {
+    @apply list-inside list-decimal;
+  }
+  
+  .post-content div iframe {
+    @apply w-full h-auto aspect-video mb-4 rounded-lg;
+  }

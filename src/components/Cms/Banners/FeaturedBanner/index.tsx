@@ -1,11 +1,30 @@
 import Link from "next/link";
 import bannerExample from "./data";
 import Image from "next/image";
-import { RightArrowCircle } from "@styled-icons/boxicons-regular";
+// import { RightArrowCircle } from "@styled-icons/boxicons-regular";
 
-console.log(bannerExample);
+async function getBanner() {
+  const response = await fetch(
+    `${process.env.STRAPI_API_DEV}/api/banners?filters[active][$eq]=true&populate=*`
+    );
 
-export default function FeaturedBanner() {
+  console.log("DATA 1", response);
+
+  const { data } = await response.json();
+
+  // console.log("DATA 2", data);
+
+
+  return data[0];
+}
+
+export default async function FeaturedBanner() {
+  const banner = await getBanner();
+
+  console.log("DATA 2", banner);
+
+
+
   return (
     <div className="flex h-[260px] bg-dark-secondary overflow-hidden rounded-md border border-dark-border">
       <div className="flex flex-col items-start flex-1 p-6 border-r border-dark-border">
@@ -15,24 +34,20 @@ export default function FeaturedBanner() {
           height={40}
           alt="PG + Apoia.se"
         />
-        <h2 className="text-2xl font-medium my-3">{bannerExample.title}</h2>
+        <h2 className="text-2xl font-medium my-3">{banner.attributes.banner_title}</h2>
         <p className="flex-1 text-zinc-300 text-lg font-light">
-          {bannerExample.description}
+          {banner.attributes.banner_description}
         </p>
         <Link
-          href={bannerExample.link.url}
+          href={banner.attributes.banner_link}
           target="_blank"
           className="flex items-center justify-start gap-2 text-zinc-400 mt-6 leading-none group hover:text-brand-green transition-all duration-300"
         >
           {bannerExample.link.label}
-          <RightArrowCircle
-            width={18}
-            className="group-hover:translate-x-1 transition-transform duration-300"
-          />
         </Link>
       </div>
 
-      <div className="p-6 border-r border-dark-border">
+      {/* <div className="p-6 border-r border-dark-border">
         <h3 className="text-xl mb-3">Campanha de arrecadação</h3>
         <p className="text-zinc-400">
           Total arrecadado:{" "}
@@ -45,7 +60,7 @@ export default function FeaturedBanner() {
           <span className="w-[34%] bg-gradient-to-r from-brand-green/20 to-brand-green"></span>
         </div>
         <span className="flex text-xs">34% completo</span>
-      </div>
+      </div> */}
 
       <div className="">
         <Image
@@ -59,3 +74,8 @@ export default function FeaturedBanner() {
     </div>
   );
 }
+
+// To-Do:
+// [ o ] Definir um visual padrão para o banner de forma que de para tornar ele 100% dinamico
+// [ o ] Adicionar uma imagem dinamica vinda do strapi
+// [ o ] Componentizar o banner em partes menores
