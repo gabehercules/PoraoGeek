@@ -5,10 +5,10 @@ import Image from "next/image";
 
 async function getBanner() {
   const response = await fetch(
-    `${process.env.STRAPI_API_DEV}/api/banners?filters[active][$eq]=true&populate=*`
+    `${process.env.STRAPI_API_URL}/api/banners?filters[active][$eq]=true&populate=*`
     );
 
-  console.log("DATA 1", response);
+  // console.log("DATA 1", response);
 
   const { data } = await response.json();
 
@@ -21,7 +21,7 @@ async function getBanner() {
 export default async function FeaturedBanner() {
   const banner = await getBanner();
 
-  console.log("DATA 2", banner);
+  // console.log("DATA 2", banner);
 
 
 

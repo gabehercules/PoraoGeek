@@ -122,7 +122,7 @@ export default function SidebarNav() {
         </div>
 
         <div className="p-2 text-sm text-center text-zinc-400">
-          <p>Beta - 0.1.0</p>
+          <p>Closed Alpha - 0.1.0</p>
         </div>
       </div>
     </>

@@ -1,5 +1,3 @@
-"use client";
-
 import DashboardHeader from "../DashboardHeader";
 import MainTopBar from "../MainTopBar";
 import SidebarNav from "../SidebarNav";
@@ -9,11 +7,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="layout-grid w-full h-screen ">
       <DashboardHeader />
       <SidebarNav />
-      <MainTopBar />
-      <main className="main-container flex flex-col overflow-y-auto">
+      <main className="main-container flex flex-col items-center overflow-y-auto">
+        <MainTopBar />
         {children}
       </main>
-      <div className="sidepanel bg-zinc-500">sidepanel</div>
+      <div className="sidepanel border-l border-dark-border">sidepanel</div>
     </div>
   );
 }
