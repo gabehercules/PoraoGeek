@@ -19,7 +19,7 @@ export default async function CategoriesNav() {
     <div className="">
       <ul className="flex gap-4 justify-center">
         {categories.map((category: any) => (
-          <li>
+          <li key={category.id}>
             <Link href={`/noticias/c/${category.attributes.slug}`}>
               {category.attributes.title}
             </Link>
