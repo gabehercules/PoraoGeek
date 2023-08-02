@@ -30,12 +30,12 @@ export default async function page({ params }: { params: { query: string } }) {
   return (
     <div className="w-full p-[50px]">
       <h1 className="text-xl font-semibold">Busca</h1>
-      {decodeQueryURI(params.query)}
+      <h1>{decodeQueryURI(params.query)}</h1>
       {!posts ? (
         <div className="flex flex-col">
           <div className="flex items-center justify-center w-full h-[320px] text-dark-text bg-dark-secondary rounded-lg">
-            imagem placeholder para query vazia (tipo aquelas ilustrações de
-            "nada aqui")
+            imagem placeholder para query vazia - tipo aquelas ilustrações de
+            nada aqui
           </div>
           <p>Nenhum post encontrado</p>
           <Link
