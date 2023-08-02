@@ -1,5 +1,7 @@
 export function formatDate(date) {
   const dateInISO = new Date(date);
+  const now = new Date();
+  const diff = now - dateInISO;
 
   const year = dateInISO.getFullYear();
   const month = dateInISO.getMonth();
@@ -8,5 +10,9 @@ export function formatDate(date) {
   const minute = dateInISO.getMinutes();
   const dateFormated = `${day}/${month}/${year} ${hour}:${minute}`;
 
-  return dateFormated;
+  if( diff < 60000 ) {
+    return 'Agora pouco';
+  } else {
+    return dateFormated;
+  }
 }

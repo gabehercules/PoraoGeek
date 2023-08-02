@@ -24,7 +24,7 @@ export default function Page() {
         <div>
           <h1 className="text-3xl font-bold mb-2">
             Ajude o Porão Geek a continar entregando conteúdo de qualidade e
-            mover essa comunidade que nos move e inspira!
+            mover essa comunidade que nos inspira!
           </h1>
           <p className="text-zinc-400">
             O Porão se compromete sempre, a proporcionar um nível de conteúdo de
@@ -53,9 +53,11 @@ export default function Page() {
           <div>
             <h3 className="text mb-2">Doação via pix</h3>
             <p className="text-zinc-400">
-              Basta copiar nossa chave pix, e efetura a doação pelo app do seu
+              Basta copiar nossa chave pix, e efetuar a doação pelo app do seu
               banco. A Doação é completamente anônima e não será exposta em
-              nunhum lugar.
+              nunhum lugar. Caso queira, você pode nos enviar o comprovante de
+              doação no mesmo email da chave pix, e nós te enviaremos um
+              agradecimento especial!
             </p>
             <div className="flex w-fit rounded-md border border-zinc-800 overflow-hidden mt-4">
               <p className="flex items-center justify-center text-sm py-2 px-3 pointer-events-none bg-dark-primary">
@@ -80,6 +82,16 @@ export default function Page() {
                 </button>
               </span>
             </div>
+          </div>
+
+          <div>
+            <h3 className="text mt-6 mb-2">Doação via Patreon: Em breve</h3>
+          </div>
+
+          <div>
+            <h3 className="text mt-6 mb-2">
+              Apoio contínuo no Apoia.se: Em breve
+            </h3>
           </div>
         </div>
       </div>

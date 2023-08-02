@@ -24,26 +24,31 @@ export default function PostCard({
   // console.log(data);
 
   return (
-    <li
-      key={id}
-      className="overflow-hidden rounded-md border border-dark-border bg-dark-secondary"
-    >
-      <Link href={`/noticias/${slug}`} className="flex flex-col h-full">
+    <li key={id} className="overflow-hidden ">
+      <Link href={`/noticias/${slug}`} className="flex flex-col h-full gap-4">
         <Image
           src={`${featuredImage}`}
           width={400}
-          height={300}
+          height={200}
           alt={`Imagem de capa do artigo: ${title}`}
-          className="w-full h-[220px] object-cover"
+          className="w-full h-[150px] object-cover rounded-lg"
         />
-        <div className="flex-1 p-4">
+        <div className="flex-1">
           <h1>{title}</h1>
         </div>
-        <div className="flex items-center gap-2 p-4 border-t border-dark-border">
-          <span className="flex items-center justify-center w-8 h-8 text-sm rounded-full bg-gray-400">
+        <div className="flex items-center gap-2 pt-4 border-t border-dark-border">
+          <span className="flex items-center justify-center w-6 h-6 text-xs rounded-full bg-gray-400">
             PG
           </span>
-          <span className="text-sm">{date}</span>
+          <div className="flex gap-2 items-center">
+            <span className="text-xs">
+              <span className="text-dark-text">por</span> Porão Geek
+            </span>
+            <span className="text-xs">•</span>
+            <span className="text-xs">
+              <span className="text-dark-text">em</span> {date}
+            </span>
+          </div>
         </div>
       </Link>
     </li>

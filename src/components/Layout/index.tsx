@@ -7,8 +7,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="layout-grid w-full h-screen ">
       <DashboardHeader />
       <SidebarNav />
+      <MainTopBar />
       <main className="main-container flex flex-col items-center overflow-y-auto">
-        <MainTopBar />
         {children}
       </main>
       <div className="sidepanel border-l border-dark-border">sidepanel</div>
