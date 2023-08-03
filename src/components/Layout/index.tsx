@@ -1,5 +1,6 @@
 import DashboardHeader from "../DashboardHeader";
 import MainTopBar from "../MainTopBar";
+import SidePanel from "../SidePanel";
 import SidebarNav from "../SidebarNav";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -11,7 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <main className="main-container flex flex-col items-center overflow-y-auto">
         {children}
       </main>
-      <div className="sidepanel border-l border-dark-border">sidepanel</div>
+      <SidePanel />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 async function getPostsByQuery(query: string) {
   // ideia: fazer o fetch buscar resultados onde a query não esteja somente no 'post_title'
@@ -18,6 +19,8 @@ async function getPostsByQuery(query: string) {
 
 export default async function page({ params }: { params: { query: string } }) {
   const posts = await getPostsByQuery(params.query);
+
+  console.log("LOG DOS POSTS AQUI", posts);
 
   // não sei se vou precisar disso, avaliar se devo tirar
   const decodeQueryURI = (query: string) => {
@@ -49,12 +52,37 @@ export default async function page({ params }: { params: { query: string } }) {
         </div>
       ) : (
         <div>
-          {posts.map((post: any) => (
-            <div key={post.id}>
-              <h1>{post.attributes.post_title}</h1>
-              <p>{post.attributes.post_description}</p>
-            </div>
-          ))}
+          <ul className="flex flex-col rounded border border-dark-border overflow-hidden">
+            {posts.map((post: any) => (
+              <li
+                key={post.id}
+                className="odd:bg-dark-secondary even:bg-dark-primary"
+              >
+                <Link
+                  href={`/noticias/${post.attributes.post_slug}`}
+                  className="flex gap-4 hover:text-brand-green transition-colors duration-300"
+                >
+                  <div>
+                    <Image
+                      src={`${post.attributes.featured_media.data.attributes.url}`}
+                      width={100}
+                      height={100}
+                      alt={post.attributes.post_title}
+                      className="w-[100px] h-full rounded object-cover"
+                    />
+                  </div>
+                  <div className="p-2">
+                    <h1 className="font-semibold">
+                      {post.attributes.post_title}
+                    </h1>
+                    <p className="text-dark-text">
+                      {post.attributes.post_description}
+                    </p>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       )}
     </div>

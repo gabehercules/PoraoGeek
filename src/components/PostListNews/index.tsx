@@ -42,7 +42,7 @@ export default async function PostListNews() {
   return (
     <div>
       <ul className="grid grid-cols-4 gap-10">
-        {posts.map((post: any) => (
+        {posts?.map((post: any) => (
           <PostCard
             title={post.attributes.post_title}
             featuredImage={post.attributes.featured_media.data.attributes.url}
