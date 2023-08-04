@@ -27,8 +27,7 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
-# reabilitar quando for usar variaveis de ambiente em produção, por enquanto preciso que as .envs sejam enviadas para o github para transacionar entre o repo local e o codespace 
-.env.local 
+.env.local
 
 # vercel
 .vercel
