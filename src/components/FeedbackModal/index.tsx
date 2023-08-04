@@ -13,9 +13,9 @@ export default function FeedbackModal() {
     <div className="p-2 border-t border-dark-border">
       <button
         onClick={handleToggleModal}
-        className="w-full flex justify-center gap-2 text-zinc-400 p-2 rounded hover:bg-dark-primary/75 hover:text-white transition-colors "
+        className="w-full flex items-center justify-center gap-2 text-sm bg-brand-green/5 text-brand-green p-2 rounded hover:bg-brand-green/10 transition-colors"
       >
-        <MessageDots width={20} />
+        <MessageDots width={18} />
         Feedback
       </button>
 

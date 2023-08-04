@@ -1,6 +1,9 @@
 ## **Porão Geek**
-#### Versão **0.14.1** - Atualmente em dev closed
----
+
+#### Versão Appha **0.19.0**
+
 ---
 
-Para saber mais [clique aqui](https://poraogeek.com.br/o-porao "Sobre o Porão Geek") 
+---
+
+Para saber mais [clique aqui](https://poraogeek.com.br/o-porao "Sobre o Porão Geek")

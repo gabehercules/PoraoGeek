@@ -10,10 +10,7 @@ async function fetchRecentPosts() {
     const res = await fetch(
       `${process.env.STRAPI_API_URL}/api/posts?filters[featured_post][$eq]=false&sort[0]=createdAt:desc&pagination[page]=1&pagination[pageSize]=8&populate=*`,
       {
-        // cache: "no-store",
-        next: {
-          revalidate: 10,
-        },
+        cache: "no-store",
       }
     );
 
@@ -53,6 +50,13 @@ export default async function PostListNews() {
           />
         ))}
       </ul>
+      <div className="mt-6 p-2 rounded bg-brand-green/5">
+        <p className="text-sm">
+          <span className="text-brand-green font-semibold">Dica:</span> Os devs
+          incompetentes ainda não implementaram uma paginação/carregamento, caso
+          queira encontrar algo específico use o campo de busca
+        </p>
+      </div>
     </div>
   );
 }

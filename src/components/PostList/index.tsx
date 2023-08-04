@@ -57,6 +57,13 @@ export default async function PostList() {
           ))}
         </ul>
       )}
+      <div className="mt-6 p-2 rounded bg-brand-green/5">
+        <p className="text-sm">
+          <span className="text-brand-green font-semibold">Dica:</span> Os devs
+          incompetentes ainda não implementaram uma paginação/carregamento, caso
+          queira encontrar algo específico use o campo de busca
+        </p>
+      </div>
     </div>
   );
 }
