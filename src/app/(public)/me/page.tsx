@@ -12,7 +12,7 @@ export default function Page() {
         <div className="">
           {/* banner de capa */}
           <div className="flex w-full h-[245px] rounded-md overflow-hidden border border-dark-border">
-            <div className="flex gap-4 items-start bg-dark-primary p-6">
+            <div className="flex gap-4 items-start bg-dark-contrast p-6">
               {/* foto de perfil */}
               <span className="relative w-[80px] h-[80px]">
                 <Image
@@ -29,7 +29,7 @@ export default function Page() {
                   Gabriel Hercules
                 </span>
                 <span>@gabehercules</span>
-                <button className="flex gap-2 items-center bg-dark-primary p-1 border border-dark-border rounded text-sm">
+                <button className="flex gap-2 items-center bg-dark-contrast p-1 border border-dark-border rounded text-sm">
                   {/* <DiscordAlt width={16} /> */}
                   <span>Herculio#4337</span>
                   {/* <Copy width={16} /> */}

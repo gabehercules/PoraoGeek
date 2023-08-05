@@ -56,7 +56,7 @@ export default async function page({ params }: { params: { query: string } }) {
             {posts.map((post: any) => (
               <li
                 key={post.id}
-                className="odd:bg-dark-secondary even:bg-dark-primary"
+                className="odd:bg-dark-secondary even:bg-dark-contrast"
               >
                 <Link
                   href={`/noticias/${post.attributes.post_slug}`}

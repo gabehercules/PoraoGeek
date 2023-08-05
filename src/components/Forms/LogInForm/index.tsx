@@ -49,7 +49,7 @@ export default function LogInForm() {
           type="email"
           name="email"
           id="email"
-          className="bg-dark-primary border-dark-border p-3 rounded-md text-white focus:ring-2
+          className="bg-dark-contrast border-dark-border p-3 rounded-md text-white focus:ring-2
                   focus:ring-brand-green/50 focus:border-brand-green
                     hover:border-brand-green/50 hover:transition"
         />
@@ -66,7 +66,7 @@ export default function LogInForm() {
           type="password"
           name="password"
           id="password"
-          className="bg-dark-primary border-dark-border p-3 rounded-md text-white focus:ring-2
+          className="bg-dark-contrast border-dark-border p-3 rounded-md text-white focus:ring-2
                   focus:ring-brand-green/50 focus:border-brand-green
                     hover:border-brand-green/50 hover:transition"
         />

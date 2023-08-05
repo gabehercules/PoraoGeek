@@ -31,8 +31,8 @@ export default async function CategoryPage({
 
   const posts = data[0].attributes.posts.data;
 
-  console.log("LOG DA CATEGORY", data);
-  console.log('Conteúdo do objeto "posts":', posts);
+  // console.log("LOG DA CATEGORY", data);
+  // console.log('Conteúdo do objeto "posts":', posts);
 
   return (
     <div className="p-10">

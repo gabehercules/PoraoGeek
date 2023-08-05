@@ -30,7 +30,7 @@ export default function SearchBar() {
           id="search"
           name="search"
           placeholder={"Pesquise qualquer post"}
-          className="w-[320px] h-full flex border-x border-y-[#00000000] bg-dark-primary text-light-text text-sm border-dark-border py-1 px-8 placeholder:text-dark-text placeholder:text-sm placeholder:leading-tight"
+          className="w-[320px] h-full flex border-x border-y-[#00000000] bg-dark-contrast text-light-text text-sm border-dark-border py-1 px-8 placeholder:text-dark-text placeholder:text-sm placeholder:leading-tight"
           autoComplete="off"
           spellCheck="false"
         />

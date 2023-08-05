@@ -55,7 +55,7 @@ export default function SidePanel() {
             id="email"
             required
             placeholder="luke.skywalker@theforce.space"
-            className="w-full p-2 text-sm rounded border bg-dark-primary border-dark-border focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent placeholder:text-dark-text"
+            className="w-full p-2 text-sm rounded border bg-dark-contrast border-dark-border focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent placeholder:text-dark-text"
           />
           <button
             type="submit"

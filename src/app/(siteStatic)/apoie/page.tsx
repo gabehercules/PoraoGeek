@@ -60,19 +60,19 @@ export default function Page() {
               agradecimento especial!
             </p>
             <div className="flex w-fit rounded-md border border-zinc-800 overflow-hidden mt-4">
-              <p className="flex items-center justify-center text-sm py-2 px-3 pointer-events-none bg-dark-primary">
+              <p className="flex items-center justify-center text-sm py-2 px-3 pointer-events-none bg-dark-contrast">
                 Chave pix
               </p>
               <span className="flex gap-1 items-center p-1 text-zinc-500 bg-zinc-900">
                 donate@poraogeek.com.br
                 <button
                   onClick={handleCopyToClipboard}
-                  className="w-6 h-6 flex items-center justify-center p-[2px] rounded hover:bg-dark-primary hover:text-brand-green duration-300 transition-colors"
+                  className="w-6 h-6 flex items-center justify-center p-[2px] rounded hover:bg-dark-contrast hover:text-brand-green duration-300 transition-colors"
                 >
                   {copied ? (
                     <>
                       <Check width={18} height={18} />
-                      <span className="text-xs absolute p-1 bg-dark-primary rounded translate-x-12">
+                      <span className="text-xs absolute p-1 bg-dark-contrast rounded translate-x-12">
                         Copiado!
                       </span>
                     </>

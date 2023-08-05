@@ -3,7 +3,7 @@ import PostList from "../../components/PostList";
 
 export default async function Page() {
   return (
-    <div className="flex bg-dark-primary gap-5">
+    <div className="flex gap-5">
       <div className="flex flex-col flex-1 gap-6 p-10">
         {/* <FeaturedBanner /> */}
         <div className="flex gap-4">

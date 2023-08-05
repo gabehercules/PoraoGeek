@@ -44,7 +44,7 @@ export default function FeedbackModal() {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden border border-dark-border rounded-md bg-dark-primary p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden border border-dark-border rounded-md bg-dark-contrast p-6 text-left align-middle shadow-xl transition-all">
                   <FeedbackForm />
 
                   <div className="mt-4">

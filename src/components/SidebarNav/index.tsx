@@ -42,7 +42,7 @@ export default function SidebarNav() {
   return (
     <>
       <div className="flex flex-col bg-dark-secondary border-r border-dark-border sidenav-dashboard">
-        <div className="flex flex-col flex-1 bg-dark-primary py-3 px-6">
+        <div className="flex flex-col flex-1 bg-dark-contrast py-3 px-6">
           <div className="flex items-center gap-3 mb-6 pt-2 pb-6 border-b border-dark-border">
             <Link href="/" className="w-[120px]">
               <Logo />
@@ -63,31 +63,11 @@ export default function SidebarNav() {
               </li>
             ))}
           </ul>
-
-          <div>
-            <div className="border border-brand-green/20 rounded-lg overflow-hidden bg-gradient-to-br from-transparent to-white/5">
-              <div className="p-4">
-                <h4 className="font-semibold mb-2">Apoie o Porão</h4>
-                <p className="text-sm text-white/50">
-                  Ajude o Porão a continuar produzindo conteúdo de qualidade em
-                  uma plataforma única
-                </p>
-              </div>
-              <div>
-                <a
-                  href="/apoie"
-                  className="flex w-full px-4 py-2 text-sm bg-dark-primary border-t border-dark-border"
-                >
-                  Apoie
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
 
         <FeedbackModal />
 
-        <div className="p-2 text-sm text-center text-zinc-400">
+        <div className="p-2 text-xs text-center text-zinc-400">
           <p>Closed Alpha - 0.1.0</p>
         </div>
       </div>

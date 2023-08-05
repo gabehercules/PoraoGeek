@@ -3,7 +3,7 @@ import PostListNews from "../../../components/PostListNews";
 
 export default function Page() {
   return (
-    <div className="flex bg-dark-primary gap-5">
+    <div className="flex gap-5">
       <div className="flex flex-col flex-1 gap-6 p-10">
         <h2>Destaques</h2>
         <FeaturedPosts />

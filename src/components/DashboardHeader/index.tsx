@@ -9,7 +9,7 @@ import MainNavigation from "../MainNavigation";
 
 export default function DashboardHeader() {
   return (
-    <div className="flex gap-8 items-center justify-between w-full py-2 border-b bg-dark-primary border-dark-border header-dashboard">
+    <div className="flex gap-8 items-center justify-between w-full py-2 border-b bg-dark-contrast border-dark-border header-dashboard">
       <div className="flex flex-1 gap-8 items-center">
         <MainNavigation />
 

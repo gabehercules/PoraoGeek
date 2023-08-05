@@ -16,8 +16,8 @@ export default function UserWidget() {
       <Popover className="flex relative transition justify-end">
         <Popover.Button
           className="flex items-center gap-2 p-2 rounded-md border border-transparent transition
-              hover:bg-dark-primary hover:border hover:border-dark-border
-                focus:ring-0 focus:outline-none active:bg-dark-primary
+              hover:bg-dark-contrast hover:border hover:border-dark-border
+                focus:ring-0 focus:outline-none active:bg-dark-contrast
                 focus-visible:border focus-visible:border-dark-border
               active:border-dark-border"
         >
@@ -44,12 +44,12 @@ export default function UserWidget() {
         >
           <Popover.Panel className="flex flex-col gap-2 w-[240px] absolute top-full z-10 bg-dark-secondary border border-dark-border rounded-md mt-1 transition overflow-hidden shadow-lg shadow-black/50">
             <div className="flex gap-1 flex-col text-white">
-              <Link href="/me/" className="py-2 px-4 hover:bg-dark-primary">
+              <Link href="/me/" className="py-2 px-4 hover:bg-dark-contrast">
                 Meu Perfil
               </Link>
               <Link
                 href="/me/configuracoes"
-                className="py-2 px-4 hover:bg-dark-primary"
+                className="py-2 px-4 hover:bg-dark-contrast"
               >
                 Configurações
               </Link>
@@ -61,7 +61,7 @@ export default function UserWidget() {
               </Link>
             </div>
             <div className="flex border-t border-dark-border">
-              <button className="flex flex-1 items-center gap-2 px-4 py-3 text-white text-sm hover:bg-dark-primary/75">
+              <button className="flex flex-1 items-center gap-2 px-4 py-3 text-white text-sm hover:bg-dark-contrast/75">
                 <MessageDots width={16} />
                 <span className="self-start flex-1 leading-none">
                   Enviar Feedback
