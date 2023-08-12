@@ -6,7 +6,7 @@ async function getPostsByQuery(query: string) {
   // mas também em tags, categorias, etc para obter resultados mais relevantes/numerosos
   try {
     const response = await fetch(
-      `${process.env.STRAPI_API_URL}/api/posts?filters[post_title][$contains]=${query}&pagination[page]=1&pagination[pageSize]=8&populate=*`
+      `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/posts?filters[post_title][$contains]=${query}&pagination[page]=1&pagination[pageSize]=8&populate=*`
     );
     const { data } = await response.json();
     if (data.length > 0) {

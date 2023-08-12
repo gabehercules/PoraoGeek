@@ -5,7 +5,7 @@ import { formatDate } from "../../../../../utils/functions";
 async function fetchPostsByCategory(slug: string) {
   try {
     const res = await fetch(
-      `${process.env.STRAPI_API_URL}/api/categories?filters[slug][$eq]=${slug}&populate[posts][populate][0]=featured_media`,
+      `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/categories?filters[slug][$eq]=${slug}&populate[posts][populate][0]=featured_media`,
       {
         cache: "no-store",
       }

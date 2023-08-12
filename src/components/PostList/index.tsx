@@ -7,7 +7,7 @@ async function fetchRecentPosts() {
 
   try {
     const res = await fetch(
-      `${process.env.STRAPI_API_URL}/api/posts?sort[0]=createdAt:desc&pagination[page]=${page}&pagination[pageSize]=${perPage}&populate=*`,
+      `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/posts?sort[0]=createdAt:desc&pagination[page]=${page}&pagination[pageSize]=${perPage}&populate=*`,
       {
         cache: "no-store",
       }

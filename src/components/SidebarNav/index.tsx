@@ -9,6 +9,7 @@ import {
 import Link from "next/link";
 import Logo from "../Logo";
 import FeedbackModal from "../FeedbackModal";
+import UserWidget from "../UserProfile/UserWidget";
 
 const navLinks = [
   {
@@ -48,6 +49,11 @@ export default function SidebarNav() {
               <Logo />
             </Link>
           </div>
+
+          <div>
+            <UserWidget />
+          </div>
+
           <ul className="flex flex-col flex-1 gap-2 list-none">
             <span className="mb-2 text-xs text-white/30">Navegue</span>
             {navLinks.map((link, i) => (

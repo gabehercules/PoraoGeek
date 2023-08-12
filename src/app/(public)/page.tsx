@@ -1,11 +1,9 @@
-// import FeaturedBanner from "../../components/Cms/Banners/FeaturedBanner";
 import PostList from "../../components/PostList";
 
-export default async function Page() {
+export default function Page() {
   return (
     <div className="flex gap-5">
       <div className="flex flex-col flex-1 gap-6 p-10">
-        {/* <FeaturedBanner /> */}
         <div className="flex gap-4">
           <div className="p-4 rounded-lg bg-brand-green/10">
             <h2 className="pb-2 font-bold text-brand-green">

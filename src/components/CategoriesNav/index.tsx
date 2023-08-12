@@ -2,7 +2,9 @@ import Link from "next/link";
 
 async function getCategoriesList() {
   try {
-    const res = await fetch(`${process.env.STRAPI_API_URL}/api/categories`);
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/categories`
+    );
 
     return res.json();
   } catch (error) {

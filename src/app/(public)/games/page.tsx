@@ -4,8 +4,8 @@ export default function Page() {
       <div className="flex flex-col items-center justify-center w-full h-[240px] rounded-lg bg-dark-secondary">
         <h1 className="text-dark-text text-lg font-semibold mb-2">Em breve</h1>
         <p>
-          Em breve, um local para montar grupos de jogos. Encontrar grupos
-          baseados em títulos de jogos, categoria de jogos e muito mais
+          Encontre jogos por título, gênero, plataforma, preço; adicione-o à sua
+          lista de desejos, faça uma review e muito mais!
         </p>
       </div>
     </div>

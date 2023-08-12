@@ -2,8 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 import Loading from "./loading";
-import "../../../../../styles/post-styles.css"
-
+import "../../../../../styles/post-styles.css";
 
 interface PostProps {
   id: number;
@@ -22,7 +21,7 @@ interface PostProps {
 
 const fetchPosts = async (slug: string) => {
   const response = await fetch(
-    `${process.env.STRAPI_API_URL}/api/posts?filters[post_slug][$eq]=${slug}&populate=*`,
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/posts?filters[post_slug][$eq]=${slug}&populate=*`,
     { cache: "no-cache" }
   );
 
@@ -40,7 +39,6 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const { id, attributes: post } = posts;
 
   // console.log(id, post);
-
 
   return (
     <div className="flex flex-col items-center">
@@ -69,9 +67,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
           />
         </div>
         <div className="flex items-center justify-center w-full py-12 border-t border-dark-border bg-dark-secondary">
-          <div className="w-full max-w-[768px]">
-            varias coisas aqui
-          </div>
+          <div className="w-full max-w-[768px]">varias coisas aqui</div>
         </div>
       </Suspense>
     </div>

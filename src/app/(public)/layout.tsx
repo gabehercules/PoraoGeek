@@ -1,5 +1,6 @@
 import "../../../styles/globals.css";
 import Layout from "../../components/Layout";
+import Provider from "../../contexts/Session/Provider";
 
 export const metadata = {
   title: "Porão Geek",
@@ -14,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
-        <Layout>{children}</Layout>
+        <Provider>
+          <Layout>{children}</Layout>
+        </Provider>
       </body>
     </html>
   );

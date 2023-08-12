@@ -4,7 +4,7 @@ import Link from "next/link";
 async function getFeaturedPosts() {
   try {
     const res = await fetch(
-      `${process.env.STRAPI_API_URL}/api/posts?filters[featured_post][$eq]=true&sort[0]=createdAt:desc&pagination[pageSize]=3&populate=*`,
+      `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/posts?filters[featured_post][$eq]=true&sort[0]=createdAt:desc&pagination[pageSize]=3&populate=*`,
       {
         cache: "no-store",
       }

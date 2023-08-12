@@ -1,12 +1,43 @@
-// import { DiscordAlt, Google } from "@styled-icons/boxicons-logos";
+"use client";
+
+import { DiscordAlt, Google } from "@styled-icons/boxicons-logos";
+import { FormEvent, useState } from "react";
 import Logo from "../../Logo";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
+import { X } from "@styled-icons/boxicons-regular";
 
 export default function LogInForm() {
+  const [error, setError] = useState(false);
+
+  const router = useRouter();
+  const handleSignIn = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
+    e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+
+    const email = formData.get("email");
+    const password = formData.get("password");
+
+    const response = await signIn("credentials", {
+      redirect: false,
+      email: email as string,
+      password: password as string,
+    });
+
+    if (response?.error) {
+      // console.log("RES NOT OK", response);
+      setError(true);
+      // setTimeout(() => setError(false), 3000);
+      return;
+    }
+    router.push("/");
+  };
+
   return (
     <form
-      action="/api/auth/signin"
-      method="POST"
+      onSubmit={handleSignIn}
       id="login-form"
       className="flex flex-col flex-1 gap-6"
     >
@@ -20,12 +51,25 @@ export default function LogInForm() {
       </div>
 
       <div className="flex flex-col gap-4 flex-1">
-        <button className="flex flex-1 items-center justify-center gap-2 border p-3 border-dark-border rounded-md text-white">
-          <span>{/* <DiscordAlt width={24} /> */}</span>
+        <p className="text-sm text-center text-dark-text">
+          Em breve login com Discord e Google
+        </p>
+        <button
+          className="flex flex-1 items-center justify-center gap-2 border p-3 border-dark-border rounded-md text-white disabled:opacity-20"
+          disabled
+        >
+          <span>
+            <DiscordAlt width={24} />
+          </span>
           Entre com o Discord
         </button>
-        <button className="flex flex-1 items-center justify-center gap-2 border p-3 border-dark-border rounded-md text-white">
-          <span>{/* <Google width={24} /> */}</span>
+        <button
+          className="flex flex-1 items-center justify-center gap-2 border p-3 border-dark-border rounded-md text-white disabled:opacity-20"
+          disabled
+        >
+          <span>
+            <Google width={24} />
+          </span>
           Entre com o Google
         </button>
       </div>
@@ -46,12 +90,13 @@ export default function LogInForm() {
           E-mail
         </label>
         <input
-          type="email"
+          type="text"
           name="email"
           id="email"
-          className="bg-dark-contrast border-dark-border p-3 rounded-md text-white focus:ring-2
-                  focus:ring-brand-green/50 focus:border-brand-green
-                    hover:border-brand-green/50 hover:transition"
+          className="
+          bg-dark-contrast border-dark-border p-3 rounded-md text-white focus:ring-2
+          focus:ring-brand-green/50 focus:border-brand-green hover:border-brand-green/50
+          hover:transition"
         />
       </div>
 
@@ -70,12 +115,12 @@ export default function LogInForm() {
                   focus:ring-brand-green/50 focus:border-brand-green
                     hover:border-brand-green/50 hover:transition"
         />
-        <a
-          href="#"
+        <Link
+          href="/redefinir-senha"
           className="flex items-start text-sm text-dark-text underline mt-1"
         >
           Esqueci minha senha
-        </a>
+        </Link>
       </div>
 
       <button
@@ -86,12 +131,27 @@ export default function LogInForm() {
       </button>
       <div>
         <p className="text-sm text-white">
-          Não tem uma conta?{" "}
-          <Link href="/cadastrar" className="text-brand-green">
-            Cadastre-se
-          </Link>
+          Cadastro fechado, caso queira solicitar uma conta para teste, nos
+          envie um email para{" "}
+          <a
+            href="mailto:contato@poraogeek.com.br?subject=Solicitação de conta para teste"
+            className="text-brand-green"
+          >
+            contato@poraogeek.com.br
+          </a>
         </p>
       </div>
+
+      {error === true && (
+        <div className="flex justify-between items-center p-3 rounded-md text-sm font-medium bg-red-500/10 text-red-500">
+          <p>Usuário ou senha inválidos</p>
+          <span>
+            <button onClick={() => setError(false)}>
+              <X width={16} />
+            </button>
+          </span>
+        </div>
+      )}
     </form>
   );
 }

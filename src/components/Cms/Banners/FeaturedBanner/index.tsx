@@ -5,15 +5,14 @@ import Image from "next/image";
 
 async function getBanner() {
   const response = await fetch(
-    `${process.env.STRAPI_API_URL}/api/banners?filters[active][$eq]=true&populate=*`
-    );
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/banners?filters[active][$eq]=true&populate=*`
+  );
 
   // console.log("DATA 1", response);
 
   const { data } = await response.json();
 
   // console.log("DATA 2", data);
-
 
   return data[0];
 }
@@ -22,8 +21,6 @@ export default async function FeaturedBanner() {
   const banner = await getBanner();
 
   // console.log("DATA 2", banner);
-
-
 
   return (
     <div className="flex h-[260px] bg-dark-secondary overflow-hidden rounded-md border border-dark-border">
@@ -34,7 +31,9 @@ export default async function FeaturedBanner() {
           height={40}
           alt="PG + Apoia.se"
         />
-        <h2 className="text-2xl font-medium my-3">{banner.attributes.banner_title}</h2>
+        <h2 className="text-2xl font-medium my-3">
+          {banner.attributes.banner_title}
+        </h2>
         <p className="flex-1 text-zinc-300 text-lg font-light">
           {banner.attributes.banner_description}
         </p>

@@ -8,14 +8,14 @@ async function fetchRecentPosts() {
 
   try {
     const res = await fetch(
-      `${process.env.STRAPI_API_URL}/api/posts?filters[featured_post][$eq]=false&sort[0]=createdAt:desc&pagination[page]=1&pagination[pageSize]=8&populate=*`,
+      `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/posts?filters[featured_post][$eq]=false&sort[0]=createdAt:desc&pagination[page]=1&pagination[pageSize]=8&populate=*`,
       {
         cache: "no-store",
       }
     );
 
     // console.log("LOG DO RES", res);
-    // console.log("LOG DO STRAPI", process.env.STRAPI_API_URL);
+    // console.log("LOG DO STRAPI", process.env.NEXT_PUBLIC_STRAPI_API_URL);
 
     return res.json();
   } catch (error) {
