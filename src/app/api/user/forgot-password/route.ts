@@ -1,36 +1,38 @@
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request, res: Response) {
-  const requestHeader = await req.json();
+  // const requestHeader = await req.json();
 
-  try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/auth/forgot-password`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(requestHeader),
-      }
-    );
+  // try {
+  //   const response = await fetch(
+  //     `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/auth/forgot-password`,
+  //     {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(requestHeader),
+  //     }
+  //   );
 
-    const data = await response.json();
+  //   const data = await response.json();
 
-    if (data.error) {
-      // console.log("DEU ERRO NA RESPONSE DO STRAPI");
-      return new Error(data.error);
-    }
+  //   if (data.error) {
+  //     // console.log("DEU ERRO NA RESPONSE DO STRAPI");
+  //     return new Error(data.error);
+  //   }
 
-    // console.log("ERROR NAO EXISTE");
+  //   // console.log("ERROR NAO EXISTE");
 
-    console.log(data.error);
+  //   console.log(data.error);
 
-    return NextResponse.json(data);
-  } catch (error) {
-    // console.log("CAIU NO ERRO", error);
-    return NextResponse.json({ error: "Erro ao resetar a senha" });
-  }
+  //   return NextResponse.json(data);
+  // } catch (error) {
+  //   // console.log("CAIU NO ERRO", error);
+  //   return NextResponse.json({ message: "Erro ao resetar a senha" });
+  //}
+
+  return NextResponse.json({ message: "Erro ao resetar a senha" });
 }
 
 // TODO:

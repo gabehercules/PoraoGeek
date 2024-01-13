@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { authOptions } from "../../../app/api/auth/[...nextauth]/route";
 import { getServerSession } from "next-auth";
 import { getUserData } from "../../../utils/getUserData";
 import { Suspense } from "react";
+import { authOptions } from "@/lib/auth";
 
 export default async function UserProfileHeader() {
   const session = await getServerSession(authOptions);
