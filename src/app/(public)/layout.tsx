@@ -1,6 +1,12 @@
+import MainHeader from "@/components/MainHeader";
+import Provider from "@/contexts/Session/Provider";
+import MainTopBar from "@/components/MainTopBar";
+
+import CategoriesNav from "@/components/CategoriesNav";
+import SearchBar from "@/components/SearchBar";
+
 import "../../../styles/globals.css";
-import Layout from "../../components/Layout";
-import Provider from "../../contexts/Session/Provider";
+import MainNavigation from "@/components/MainNavigation";
 
 export const metadata = {
   title: "Porão Geek",
@@ -16,7 +22,12 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body>
         <Provider>
-          <Layout>{children}</Layout>
+          <MainHeader></MainHeader>
+          <MainTopBar>
+            {/* <SearchBar /> */}
+            <CategoriesNav />
+          </MainTopBar>
+          <main className="main-container p-6 overflow-y-auto">{children}</main>
         </Provider>
       </body>
     </html>

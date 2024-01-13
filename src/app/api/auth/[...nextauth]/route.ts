@@ -1,12 +1,11 @@
+import { getUserAvatar } from "@/utils/getUserData";
 import NextAuth from "next-auth";
 import type { NextAuthOptions, Session } from "next-auth";
-import { AdapterSession } from "next-auth/adapters";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 export const authOptions: NextAuthOptions = {
   // Configure one or more authentication providers
 
-  secret: process.env.NEXTAUTH_SECRET,
   session: {
     strategy: "jwt",
     maxAge: 7 * 24 * 60 * 60, // 7 days - Padrão do Strapi (validar se seria bom mudar para 30 dias)
@@ -16,7 +15,8 @@ export const authOptions: NextAuthOptions = {
       name: "Credentials",
       credentials: {},
       async authorize(credentials: any) {
-        console.log("credentials do NEXT-AUTH", credentials);
+        // console.log("1 - #### CREDENTIAL PASSADA NO AUTH", credentials);
+
         // Add logic here to look up the user from the credentials supplied
         try {
           const response = await fetch(
@@ -36,6 +36,8 @@ export const authOptions: NextAuthOptions = {
 
           const data = await response.json();
 
+          // console.log("2 - #### DATA DO STRAPI", data);
+
           const { jwt, user, error } = await data;
 
           // desestruturado o error de dentro do 'data' para a checagem abaixo, se o strapi
@@ -45,7 +47,7 @@ export const authOptions: NextAuthOptions = {
             return null;
           }
 
-          console.log("user do STRAPI", user);
+          // console.log("3 - #### USER DO STRAPI", user);
           const { id, username, email } = user;
 
           if (!jwt || !id || !username || !email) {
@@ -53,11 +55,16 @@ export const authOptions: NextAuthOptions = {
             return null;
           }
 
+          const avatarUrl = await getUserAvatar(jwt);
+
+          // console.log("AVATAR URL NO AUTH", avatarUrl);
+
           return {
             jwt,
             id,
             email,
             name: username,
+            image: avatarUrl,
           };
         } catch (e) {
           console.log(e);
@@ -68,8 +75,8 @@ export const authOptions: NextAuthOptions = {
   ],
   callbacks: {
     jwt: async ({ token, user }) => {
-      console.log("TOKEN", token);
-      console.log("USER", user);
+      // console.log("4 - #### TOKEN NO JWT CALLBACK", token);
+      // console.log("5 - #### USER NO JWT CALLBACK", user);
 
       const isSignIn = !!user;
 
@@ -85,6 +92,7 @@ export const authOptions: NextAuthOptions = {
         token.id = user.id;
         token.name = user.name;
         token.email = user.email;
+        token.picture = user.image; // avatar retornado pelo strapi
 
         token.expiration = Math.floor(
           actualDateInSeconds + tokenExpirationInSeconds
@@ -99,12 +107,16 @@ export const authOptions: NextAuthOptions = {
       return Promise.resolve(token);
     },
     session: async ({ session, token }): Promise<any> => {
+      // console.log("6 - #### SESSION NO SESSION CALLBACK", session);
+      // console.log("7 - #### TOKEN (MODIFICADO) NO SESSION CALLBACK", token);
+
       if (
         !token?.jwt ||
         !token?.expiration ||
         !token?.id ||
         !token?.name ||
-        !token?.email
+        !token?.email ||
+        !token?.picture
       ) {
         return null;
       }
@@ -114,6 +126,7 @@ export const authOptions: NextAuthOptions = {
         id: token.id,
         name: token.name,
         email: token.email,
+        image: token.picture,
       };
 
       return { ...session };

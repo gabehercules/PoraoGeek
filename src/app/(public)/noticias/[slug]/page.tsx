@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import Loading from "./loading";
 import "../../../../../styles/post-styles.css";
+import { BiChevronLeft } from "react-icons/bi";
 
 interface PostProps {
   id: number;
@@ -43,14 +44,18 @@ export default async function Post({ params }: { params: { slug: string } }) {
   return (
     <div className="flex flex-col items-center">
       <Suspense fallback={<Loading />}>
-        <div className="flex items-center gap-3 w-[768px] mt-10 mb-6">
+        <div className="flex items-center gap-3 w-full mb-6">
           {/* ideia: voltar para a home ou para a página anterior ou ter um breadcrumb */}
-          <Link href="/noticias">[icone bunito de uma casinha] Blog</Link>
-          <span>👉</span>
+          <Link
+            href="/noticias"
+            className="flex items-center gap-1 p-2 text-sm rounded text-brand-green bg-brand-green/10"
+          >
+            <BiChevronLeft />
+          </Link>
           <p className="text-white/50">{post.post_title}</p>
         </div>
-        <div className="w-[768px]">
-          <h1 className="text-4xl mb-3 leading-normal font-extrabold text-brand-green">
+        <div className="w-full">
+          <h1 className="text-3xl mb-3 leading-normal font-extrabold text-brand-green">
             {post.post_title}
           </h1>
           <h4 className="text-lg mb-8">{post.post_description}</h4>
@@ -59,7 +64,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
             width={1000}
             height={600}
             className="w-full mb-10"
-            alt={post.post_tilte}
+            alt={post.post_title}
           />
           <div
             dangerouslySetInnerHTML={{ __html: `${post.post_content}` }}

@@ -22,14 +22,16 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    },
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/utils/blogConnection.js",
-    "src/hooks/useApiSimulation.jsx",
+    "src/utils/get-api-url.ts",
     ".next/types/**/*.ts"
   ],
   "exclude": [

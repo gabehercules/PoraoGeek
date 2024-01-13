@@ -38,3 +38,7 @@ export default function SearchBar() {
     </form>
   );
 }
+
+// TODO
+// [] - adaptar o componente para exibir no MOBILE somente o ícone de search como um button;
+//      no onClick exibir um modal com o input de pesquisa

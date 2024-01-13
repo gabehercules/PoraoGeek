@@ -1,11 +1,11 @@
-import CategoriesNav from "../CategoriesNav";
-import SearchBar from "../SearchBar";
+"use client";
 
-export default function MainTopBar() {
+import { ReactNode } from "react";
+
+export default function MainTopBar({ children }: { children: ReactNode }) {
   return (
-    <div className="flex w-full px-10 border-b border-dark-border">
-      <SearchBar />
-      <CategoriesNav />
+    <div className="custom-scrollbar-categories flex border-b border-dark-border overflow-x-auto scroll-px-4">
+      {children}
     </div>
   );
 }

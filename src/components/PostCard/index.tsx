@@ -1,14 +1,7 @@
 // import axios from "axios";
+import { PostCard } from "@/types/data-state";
 import Image from "next/image";
 import Link from "next/link";
-
-interface PostCardProps {
-  id: number;
-  title: string;
-  featuredImage?: string;
-  slug: string;
-  date: any; // arrumar essa porra dps e TIPAR A DATA na função formatDate em functions.ts
-}
 
 export default function PostCard({
   id,
@@ -16,13 +9,7 @@ export default function PostCard({
   featuredImage,
   slug,
   date,
-}: PostCardProps) {
-  // const { data } = await getPosts();
-
-  // const posts = data;
-
-  // console.log(data);
-
+}: PostCard) {
   return (
     <li key={id} className="overflow-hidden ">
       <Link href={`/noticias/${slug}`} className="flex flex-col h-full gap-4">
@@ -31,7 +18,7 @@ export default function PostCard({
           width={400}
           height={200}
           alt={`Imagem de capa do artigo: ${title}`}
-          className="w-full h-[150px] object-cover rounded-lg"
+          className="w-full h-[180px] object-cover rounded-lg"
         />
         <div className="flex-1">
           <h1>{title}</h1>

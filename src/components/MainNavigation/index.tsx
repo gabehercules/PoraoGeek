@@ -1,26 +1,62 @@
 import Link from "next/link";
-import data from "./data";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
-export default function MainNavigation() {
+export default async function MainNavigation() {
+  const session = await getServerSession(authOptions);
+
+  // console.log(session);
+
   return (
-    <div className="flex items-center gap-4">
-      <ul className="flex gap-3 px-10">
-        {data.map((item, i) => (
-          <li key={i}>
-            <Link href={item.path} className="text-sm text-zinc-400">
-              {item.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <div className="flex gap-2">
-        <Link href="/entrar" className="text-sm">
+    <div className="w-full h-[92dvh] p-4 bg-black">
+      {/* Exibe um botao para fazer o login caso o usuario nao esteja logado */}
+      {!session ? (
+        <Link
+          href={"/entrar"}
+          className="flex items-center justify-center p-2 font-semibold rounded-lg bg-brand-green text-dark-primary"
+        >
           Entrar
         </Link>
-        {/* <Link href="/api/auth/signin" className="text-sm">
-          Cadastrar
-        </Link> */}
-      </div>
+      ) : (
+        <Link
+          href={"/api/auth/signout"}
+          className="flex items-center justify-center p-2 font-semibold rounded-lg bg-brand-green text-dark-primary"
+        >
+          Sair
+        </Link>
+      )}
+
+      <ul className="flex flex-col divide-y divide-dark-border">
+        <li>
+          <Link href={"/"} className="flex py-2">
+            Dashboard
+          </Link>
+        </li>
+
+        <li>
+          <Link href={"/noticias"} className="flex py-2">
+            Notícias
+          </Link>
+        </li>
+
+        <li>
+          <Link href={"/jogos"} className="flex py-2">
+            Jogos
+          </Link>
+        </li>
+
+        <li>
+          <Link href={"/grupos"} className="flex py-2">
+            Grupos
+          </Link>
+        </li>
+
+        <li>
+          <Link href={"/mercado"} className="flex py-2">
+            Mercado
+          </Link>
+        </li>
+      </ul>
     </div>
   );
 }

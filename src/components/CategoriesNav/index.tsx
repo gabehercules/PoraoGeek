@@ -1,19 +1,8 @@
+import { fetchCategoriesList } from "@/lib/fetch-categories";
 import Link from "next/link";
 
-async function getCategoriesList() {
-  try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/categories`
-    );
-
-    return res.json();
-  } catch (error) {
-    console.error("Erro ao buscar lista de categorias", error);
-  }
-}
-
 export default async function CategoriesNav() {
-  const { data: categories } = await getCategoriesList();
+  const categories = await fetchCategoriesList();
 
   // componentizar os links. Para trabalhar com o hook usePathname o componente precisa ser client side
   // porem preciso que este aqui continue server side para o fetch dos dados
