@@ -11,7 +11,7 @@ export default function FeedbackForm() {
       const feedbackContent = localStorage.getItem("feedback");
       setFeedback(feedbackContent?.valueOf() as string);
     }
-  }, []);
+  }, [feedback]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
