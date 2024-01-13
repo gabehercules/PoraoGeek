@@ -1,7 +1,6 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Search } from "@styled-icons/boxicons-regular/";
 import { FormEvent } from "react";
 
 export default function SearchBar() {
@@ -23,7 +22,7 @@ export default function SearchBar() {
           htmlFor="search"
           className="w-8 h-4 absolute flex items-center justify-center"
         >
-          <Search width={16} className="text-brand-green" />
+          {/* Icone de pesquisa */}
         </label>
         <input
           type="search"

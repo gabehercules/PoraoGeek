@@ -2,7 +2,6 @@
 
 import { FormEvent, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import { X, Loader } from "@styled-icons/boxicons-regular";
 
 export default function ResetPassword() {
   const [passwordError, setPasswordError] = useState(false);
@@ -84,14 +83,12 @@ export default function ResetPassword() {
         />
       </div>
       <button className="p-2 rounded-md bg-brand-green/20 text-brand-green text-sm text-center">
-        {loading ? <Loader width={16} /> : "Redefinir senha"}
+        {loading ? "Carregando..." : "Redefinir senha"}
       </button>
       {passwordError && (
         <p className="flex justify-between text-sm p-2 rounded-md bg-red-500/20 text-red-600">
           Senhas não conferem
-          <button onClick={() => setPasswordError(false)}>
-            <X width={16} />
-          </button>
+          <button onClick={() => setPasswordError(false)}>Fechar</button>
         </p>
       )}
     </form>

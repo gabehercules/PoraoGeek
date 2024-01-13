@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { LoaderAlt } from "@styled-icons/boxicons-regular";
 
 export default function SidePanel() {
   const [loading, setLoading] = useState(false);
@@ -61,16 +60,7 @@ export default function SidePanel() {
             type="submit"
             className="w-full text-sm p-2 mt-2 rounded bg-brand-green/20 text-brand-green hover:bg-brand-green/10 focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent transition-colors duration-200"
           >
-            {!loading ? (
-              "Cadastrar na Newsletter"
-            ) : (
-              <span>
-                <LoaderAlt
-                  width={16}
-                  className="text-brand-green animate-spin"
-                />
-              </span>
-            )}
+            {!loading ? "Cadastrar na Newsletter" : <span>Carregando</span>}
           </button>
           {subscribed ? <p>Você foi cadastrado na newsletter!</p> : " "}
         </form>

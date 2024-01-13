@@ -1,11 +1,4 @@
 "use client";
-import {
-  GridAlt,
-  BookContent,
-  Joystick,
-  Group,
-  Sidebar,
-} from "@styled-icons/boxicons-regular";
 import Link from "next/link";
 import Logo from "../Logo";
 import FeedbackModal from "../FeedbackModal";
@@ -15,27 +8,22 @@ const navLinks = [
   {
     title: "Início",
     url: "/",
-    icon: <GridAlt width={20} />,
   },
   {
     title: "Notícias",
     url: "/noticias",
-    icon: <BookContent width={20} />,
   },
   {
     title: "Grupos",
     url: "/grupos",
-    icon: <Group width={20} />,
   },
   {
     title: "Jogos",
     url: "/games",
-    icon: <Joystick width={20} />,
   },
   {
     title: "Mercado",
     url: "/mercado",
-    icon: <Sidebar width={20} />,
   },
 ];
 
@@ -63,7 +51,6 @@ export default function SidebarNav() {
                   title={link.title}
                   className="flex flex-1 gap-3 transition p-2 hover:bg-dark-secondary"
                 >
-                  {link.icon}
                   {link.title}
                 </Link>
               </li>

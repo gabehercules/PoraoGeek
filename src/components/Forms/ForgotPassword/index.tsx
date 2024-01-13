@@ -1,6 +1,5 @@
 "use client";
 
-import { LoaderAlt, X } from "@styled-icons/boxicons-regular";
 import { FormEvent, useState } from "react";
 
 export default function ForgotPassword() {
@@ -46,7 +45,7 @@ export default function ForgotPassword() {
           disabled
           className="p-2 rounded-md bg-red-500/20 text-red-600 text-sm text-center disabled:bg-red-500/10"
         >
-          <LoaderAlt width={16} className="animate-spin" />
+          Carregando
         </button>
       ) : (
         <button className="p-2 rounded-md bg-red-500/20 text-red-600 text-sm text-center">
@@ -56,9 +55,7 @@ export default function ForgotPassword() {
       {message ? (
         <p className="flex items-center justify-between text-sm">
           Confira sua caixa de entrada{" "}
-          <button onClick={() => setMessage(false)}>
-            <X width={16} />
-          </button>
+          <button onClick={() => setMessage(false)}>Fechar</button>
         </p>
       ) : null}
     </form>

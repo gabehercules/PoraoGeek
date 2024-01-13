@@ -1,28 +1,23 @@
 "use client";
 
-import { Cog, Heart, Trophy, User } from "@styled-icons/boxicons-regular";
 import Link from "next/link";
 
 const userNavLinks = [
   {
     name: "Seu perfil",
     route: "/me",
-    icon: <User width={16} />,
   },
   {
     name: "Salvos",
     route: "/me/salvos",
-    icon: <Heart width={16} />,
   },
   {
     name: "Conquistas",
     route: "/me/conquistas",
-    icon: <Trophy width={16} />,
   },
   {
     name: "Configurações",
     route: "/me/configuracoes",
-    icon: <Cog width={16} />,
   },
 ];
 
@@ -36,7 +31,6 @@ export default function UserProfileNavbar() {
               href={link.route}
               className="flex flex-1 items-center justify-center hover:bg-dark-contrast py-2"
             >
-              {link.icon}
               {link.name}
             </Link>
           </li>

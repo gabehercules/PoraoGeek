@@ -1,5 +1,4 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { MessageDots } from "@styled-icons/boxicons-regular";
 import { Fragment, useState } from "react";
 import FeedbackForm from "../Forms/FeedbackForm";
 export default function FeedbackModal() {
@@ -15,8 +14,7 @@ export default function FeedbackModal() {
         onClick={handleToggleModal}
         className="w-full flex items-center justify-center gap-2 text-sm bg-brand-green/5 text-brand-green p-2 rounded hover:bg-brand-green/10 transition-colors"
       >
-        <MessageDots width={18} />
-        Feedback
+        📨 Feedback
       </button>
 
       <Transition appear show={isOpen}>

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import bannerExample from "./data";
 import Image from "next/image";
-// import { RightArrowCircle } from "@styled-icons/boxicons-regular";
 
 async function getBanner() {
   const response = await fetch(

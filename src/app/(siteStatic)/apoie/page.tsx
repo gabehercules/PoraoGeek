@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Copy, Check } from "@styled-icons/boxicons-regular";
 
 export default function Page() {
   const [copied, setCopied] = useState(false);
@@ -71,13 +70,13 @@ export default function Page() {
                 >
                   {copied ? (
                     <>
-                      <Check width={18} height={18} />
+                      👌
                       <span className="text-xs absolute p-1 bg-dark-contrast rounded translate-x-12">
                         Copiado!
                       </span>
                     </>
                   ) : (
-                    <Copy width={18} height={18} />
+                    "👀"
                   )}
                 </button>
               </span>

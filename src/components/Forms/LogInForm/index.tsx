@@ -1,12 +1,10 @@
 "use client";
 
-import { DiscordAlt, Google } from "@styled-icons/boxicons-logos";
 import { FormEvent, useState } from "react";
 import Logo from "../../Logo";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
-import { X } from "@styled-icons/boxicons-regular";
 
 export default function LogInForm() {
   const [error, setError] = useState(false);
@@ -58,18 +56,12 @@ export default function LogInForm() {
           className="flex flex-1 items-center justify-center gap-2 border p-3 border-dark-border rounded-md text-white disabled:opacity-20"
           disabled
         >
-          <span>
-            <DiscordAlt width={24} />
-          </span>
           Entre com o Discord
         </button>
         <button
           className="flex flex-1 items-center justify-center gap-2 border p-3 border-dark-border rounded-md text-white disabled:opacity-20"
           disabled
         >
-          <span>
-            <Google width={24} />
-          </span>
           Entre com o Google
         </button>
       </div>
@@ -146,9 +138,7 @@ export default function LogInForm() {
         <div className="flex justify-between items-center p-3 rounded-md text-sm font-medium bg-red-500/10 text-red-500">
           <p>Usuário ou senha inválidos</p>
           <span>
-            <button onClick={() => setError(false)}>
-              <X width={16} />
-            </button>
+            <button onClick={() => setError(false)}>Fechar</button>
           </span>
         </div>
       )}

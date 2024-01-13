@@ -1,11 +1,7 @@
 "use client";
 
 import { Popover, Transition } from "@headlessui/react";
-import {
-  ChevronDown,
-  LinkExternal,
-  MessageDots,
-} from "@styled-icons/boxicons-regular";
+
 import { signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -48,7 +44,6 @@ export default function UserWidget() {
               {/* {user?.name} */}
               Meu Perfil
             </span>
-            <ChevronDown width={18} className="flex text-white align-middle" />
           </Popover.Button>
           <Transition
             as={Fragment}

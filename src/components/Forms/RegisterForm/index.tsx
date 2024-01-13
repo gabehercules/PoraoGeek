@@ -1,6 +1,5 @@
 "use client";
 
-import { DiscordAlt, Google } from "@styled-icons/boxicons-logos";
 import Logo from "../../Logo";
 import Link from "next/link";
 
@@ -24,15 +23,9 @@ export default function RegisterForm() {
 
       <div className="flex flex-col gap-4 flex-1">
         <button className="flex flex-1 items-center justify-center gap-2 border p-3 border-dark-border rounded-md text-white">
-          <span>
-            <DiscordAlt width={24} />
-          </span>
           Entre com o Discord
         </button>
         <button className="flex flex-1 items-center justify-center gap-2 border p-3 border-dark-border rounded-md text-white">
-          <span>
-            <Google width={24} />
-          </span>
           Entre com o Google
         </button>
       </div>

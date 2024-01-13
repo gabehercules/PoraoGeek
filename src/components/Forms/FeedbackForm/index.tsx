@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { LoaderAlt } from "@styled-icons/boxicons-regular";
 
 export default function FeedbackForm() {
   const [loading, setLoading] = useState(false);
@@ -70,7 +69,7 @@ export default function FeedbackForm() {
           className="p-2 bg-brand-green text-zinc-900 font-medium rounded-md"
         >
           {loading ? (
-            <LoaderAlt className="animate-spin" width={18} />
+            <p className="text-xs animate-spin">©</p>
           ) : (
             "Enviar Feedback"
           )}
