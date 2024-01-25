@@ -84,3 +84,22 @@ export interface PostsMeta {
     total: number;
   };
 }
+
+export interface StrapiLoginResponseUser {
+  id: number;
+  username: string;
+  email: string;
+  provider: string;
+  confirmed: boolean;
+  blocked: boolean;
+  createdAt: string;
+  updatedAt: string;
+  slug: string;
+  isCretor: boolean;
+  image?: string | null;
+}
+
+export interface StrapiLoginResponse {
+  jwt: string;
+  user?: StrapiLoginResponseUser;
+}

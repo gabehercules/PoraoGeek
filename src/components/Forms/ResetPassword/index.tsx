@@ -4,8 +4,9 @@ import { FormEvent, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 
 export default function ResetPassword() {
-  const [passwordError, setPasswordError] = useState(false);
+  const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -20,15 +21,26 @@ export default function ResetPassword() {
     const password = formData.get("password");
     const confirmPassword = formData.get("confirm-password");
 
-    console.log(password, confirmPassword);
-
     try {
       // if passwords dont match return a new error that trigger the catch block and set the passwordError state to true
       if (password !== confirmPassword) {
-        // console.log("Senhas não conferem");
-        setPasswordError(true);
         setLoading(false);
+
+        setError(true);
+
+        setMessage("Senhas não conferem");
+
         return new Error("Senhas não conferem");
+      }
+
+      if (password === "" || confirmPassword === "") {
+        setLoading(false);
+
+        setError(true);
+
+        setMessage("Preencha os campos");
+
+        return new Error("Preencha os campos");
       }
 
       // if passwords match, send a request to the api to reset the password
@@ -47,14 +59,24 @@ export default function ResetPassword() {
       // await for the strapi response fowarded by the api handler and set the response to the 'data' variable
       const data = await res.json();
 
+      const { error } = data;
+
+      if (error && error.message === "Incorrect code provided") {
+        setLoading(false);
+        setError(true);
+        setMessage("Código inválido. Reenvie o email de confirmação");
+        return new Error("Código inválido.");
+      }
+
       // if the response status is not 200, return a new error
       if (res.status !== 200) {
         setLoading(false);
+        setError(true);
+        setMessage("Erro ao resetar senha");
         console.log("Erro ao resetar senha: ", data.message);
         return new Error(data.message);
       }
 
-      // console.log("Senha resetada com sucesso");
       router.push("/entrar");
     } catch (error) {
       console.error(error);
@@ -65,6 +87,7 @@ export default function ResetPassword() {
     <form onSubmit={handleSubmit} className="w-[250px] flex flex-col gap-3">
       <div className="flex flex-col w-full">
         <input
+          required
           type="password"
           name="password"
           id="password"
@@ -75,6 +98,7 @@ export default function ResetPassword() {
 
       <div className="flex flex-col w-full">
         <input
+          required
           type="password"
           name="confirm-password"
           id="confirm-password"
@@ -85,10 +109,10 @@ export default function ResetPassword() {
       <button className="p-2 rounded-md bg-brand-green/20 text-brand-green text-sm text-center">
         {loading ? "Carregando..." : "Redefinir senha"}
       </button>
-      {passwordError && (
+      {error && (
         <p className="flex justify-between text-sm p-2 rounded-md bg-red-500/20 text-red-600">
-          Senhas não conferem
-          <button onClick={() => setPasswordError(false)}>Fechar</button>
+          {message}
+          <button onClick={() => setError(false)}>Fechar</button>
         </p>
       )}
     </form>

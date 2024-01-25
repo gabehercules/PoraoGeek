@@ -2,10 +2,9 @@ import RegisterForm from "../../../components/Forms/RegisterForm";
 
 export default function Page() {
   return (
-    <div className="flex h-screen">
-      <div className="w-[52vw] bg-[url('/hero-login.webp')]">Image</div>
-      <div className="flex flex-1 items-center justify-center">
-        <div className="w-[400px] flex shadow-md">
+    <div className="flex h-dvh">
+      <div className="flex flex-1 items-center justify-center p-4">
+        <div className="flex">
           <RegisterForm />
         </div>
       </div>

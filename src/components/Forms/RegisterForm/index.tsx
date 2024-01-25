@@ -1,17 +1,76 @@
 "use client";
 
+import { FormEvent, useState } from "react";
 import Logo from "../../Logo";
 import Link from "next/link";
+import { BiX } from "react-icons/bi";
 
 export default function RegisterForm() {
+  const [message, setMessage] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
+
+  const handleSignup = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+
+    const email = formData.get("email");
+    const password = formData.get("password");
+    const confirmPassword = formData.get("confirm-password");
+
+    if (!email || !password || !confirmPassword) {
+      setLoading(false);
+      setError(true);
+      setMessage("Preencha todos os campos!");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setLoading(false);
+      setError(true);
+      setMessage("As senhas não são iguais!");
+      return;
+    }
+
+    try {
+      // O endpoint de cadastro no STRAPI precisa do campo username
+      // Vou setar um username baseado no email, para não dar erro no /register
+      //
+      // TODO: Quebrar o cadastro em duas etapas, primeiro o usuário cria a conta
+      // com email e senha, e depois ele preenche um segundo FORM com demais dados
+      // necessários. Ex. Na segunda etapa ele preenche o username, nome, sobrenome...
+      // Abre possibilidades ate para uma checagem de username, setar opções...
+      // Na verdade acho que viraria um onboarding... Avaliar...
+
+      const response = await fetch("/api/auth/signup", {
+        method: "POST",
+        body: JSON.stringify({
+          email,
+          password,
+          confirmPassword,
+        }),
+      });
+
+      if (!response.ok) {
+        setLoading(false);
+        setError(false);
+        setMessage("Erro ao realizar o cadastro!");
+        return;
+      }
+
+      setLoading(false);
+
+      console.log("ACESSOU O ENDPOINT DE CADASTRO DO STRAPI");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
-    <form
-      action="/api/auth"
-      method="GET"
-      encType="multipart/form-data"
-      id="register-form"
-      className="flex flex-col flex-1 gap-6"
-    >
+    <form onSubmit={handleSignup} className="flex flex-col flex-1 gap-6">
+      {/* Headline */}
       <div className="flex flex-col items-center">
         <div className="w-[150px] mb-6">
           <Logo />
@@ -20,23 +79,6 @@ export default function RegisterForm() {
           Cadastre-se no Porão Geek
         </h1>
       </div>
-
-      <div className="flex flex-col gap-4 flex-1">
-        <button className="flex flex-1 items-center justify-center gap-2 border p-3 border-dark-border rounded-md text-white">
-          Entre com o Discord
-        </button>
-        <button className="flex flex-1 items-center justify-center gap-2 border p-3 border-dark-border rounded-md text-white">
-          Entre com o Google
-        </button>
-      </div>
-
-      <p
-        className="flex items-center justify-center gap-2 w-full text-sm text-dark-text text-center
-                before:flex before:flex-1 before:h-[1px] before:bg-dark-border before:align-middle
-                after:flex after:flex-1 after:h-[1px] after:bg-dark-border after:align-middle"
-      >
-        ou cadastre-se com seu e-mail
-      </p>
 
       <div className="flex flex-col">
         <label
@@ -93,8 +135,9 @@ export default function RegisterForm() {
         type="submit"
         className="flex flex-1 justify-center p-3 mt-2 rounded-md bg-brand-green text-dark-secondary text-center"
       >
-        Cadastrar
+        {loading ? "Carregando..." : "Cadastrar"}
       </button>
+
       <div>
         <p className="text-sm text-white">
           Já possí conta?{" "}
@@ -103,6 +146,17 @@ export default function RegisterForm() {
           </Link>
         </p>
       </div>
+      {error && (
+        <p className="flex items-center justify-center gap-6 p-3 rounded text-sm bg-red-500/20 text-red-500 text-center">
+          {message}{" "}
+          <button
+            onClick={() => setError(false)}
+            className="p-2 rounded bg-red-500/10"
+          >
+            <BiX />
+          </button>
+        </p>
+      )}
     </form>
   );
 }

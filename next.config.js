@@ -15,6 +15,12 @@ const nextConfig = {
         port: "",
         pathname: "/cdn-pg/**",
       },
+      {
+        hostname: "cdn.discordapp.com",
+        protocol: "https",
+        port: "",
+        pathname: "/avatars/**",
+      },
     ],
   },
 };

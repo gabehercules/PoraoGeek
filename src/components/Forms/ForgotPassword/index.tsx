@@ -4,7 +4,8 @@ import { FormEvent, useState } from "react";
 
 export default function ForgotPassword() {
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState(false);
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<"Erro" | "Info" | "">("");
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -15,7 +16,7 @@ export default function ForgotPassword() {
     // console.log(email);
 
     try {
-      const res = await fetch("/api/user/forgot-password", {
+      const response = await fetch("/api/user/forgot-password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -23,9 +24,21 @@ export default function ForgotPassword() {
         body: JSON.stringify({ email }),
       });
 
+      const { error } = await response.json();
+
+      if (error && error.message === "email is a required field") {
+        console.log("CAIU NO IF ERROR NO FRONT: ", error);
+        setLoading(false);
+        setStatus("Erro");
+        setMessage("Email é um campo obrigatório");
+
+        return;
+      }
+
       // console.log(res);
       setLoading(false);
-      setMessage(true);
+      setStatus("Info");
+      setMessage("Acabamos de enviar um email para você");
     } catch (error) {
       console.error(error);
     }
@@ -34,6 +47,7 @@ export default function ForgotPassword() {
   return (
     <form onSubmit={handleSubmit} className="w-[250px] flex flex-col gap-3">
       <input
+        required
         type="email"
         name="email"
         id="email"
@@ -49,15 +63,20 @@ export default function ForgotPassword() {
         </button>
       ) : (
         <button className="p-2 rounded-md bg-red-500/20 text-red-600 text-sm text-center">
-          solicitar redefinição de senha
+          Solicitar redefinição de senha
         </button>
       )}
-      {message ? (
+      {status && (
         <p className="flex items-center justify-between text-sm">
-          Confira sua caixa de entrada{" "}
-          <button onClick={() => setMessage(false)}>Fechar</button>
+          {message}
+          <button
+            onClick={() => setStatus("")}
+            className="text-sm p-1 rounded bg-red-500/20 text-red-500"
+          >
+            Fechar
+          </button>
         </p>
-      ) : null}
+      )}
     </form>
   );
 }

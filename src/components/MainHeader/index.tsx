@@ -1,6 +1,6 @@
 "use client";
 
-import { BiMenu } from "react-icons/bi";
+import { BiChevronDown, BiMenu } from "react-icons/bi";
 import Logo from "../Logo";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
@@ -28,7 +28,10 @@ export default function MainHeader({
           <Logo />
         </Link>
 
-        <div>
+        <Link
+          href={"/perfil"}
+          className="flex items-center gap-1 border border-dark-border rounded-full"
+        >
           <span
             className={
               status === "loading"
@@ -51,7 +54,10 @@ export default function MainHeader({
               </p>
             )}
           </span>
-        </div>
+          <span className="flex items-center justify-center w-[32px] h-[32px]">
+            <BiChevronDown />
+          </span>
+        </Link>
       </div>
 
       {/* O componente MainNavigation é resposável por renderizar os principais itens de navegação

@@ -1,38 +1,42 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(req: Request, res: Response) {
-  // const requestHeader = await req.json();
+export async function POST(req: NextRequest, res: NextResponse) {
+  const requestHeader = await req.json();
 
-  // try {
-  //   const response = await fetch(
-  //     `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/auth/forgot-password`,
-  //     {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(requestHeader),
-  //     }
-  //   );
+  console.log("requestHeader", requestHeader);
 
-  //   const data = await response.json();
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/auth/forgot-password`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestHeader),
+      }
+    );
 
-  //   if (data.error) {
-  //     // console.log("DEU ERRO NA RESPONSE DO STRAPI");
-  //     return new Error(data.error);
-  //   }
+    const data = await response.json();
 
-  //   // console.log("ERROR NAO EXISTE");
+    console.log(Date.now(), "RESPOSTA NO FETCH FORGOT PASS DO STRAPI", data);
 
-  //   console.log(data.error);
+    if (data.error) {
+      const { status, name, message } = data.error;
+      // console.log("DEU ERRO NA RESPONSE DO STRAPI");
+      console.log(data.error);
+      throw {
+        status,
+        name,
+        message,
+      };
+    }
 
-  //   return NextResponse.json(data);
-  // } catch (error) {
-  //   // console.log("CAIU NO ERRO", error);
-  //   return NextResponse.json({ message: "Erro ao resetar a senha" });
-  //}
-
-  return NextResponse.json({ message: "Erro ao resetar a senha" });
+    return NextResponse.json(data);
+  } catch (error) {
+    console.log(Date.now(), "CAIU NO ERRO: ", error);
+    return NextResponse.json({ message: "Erro ao resetar a senha", error });
+  }
 }
 
 // TODO:
